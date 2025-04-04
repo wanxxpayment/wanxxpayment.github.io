@@ -2,8 +2,9 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment wanxxstore26 Pengusaha Muda Di Bidang Jual Beli Akun Games</title>
+    <!-- Memungkinkan zoom -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Pembayaran Futuristik</title>
     <style>
         /* Animasi Gradient Glow */
         @keyframes glow {
@@ -17,11 +18,11 @@
             text-align: center;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #000000, blue);
+            background: linear-gradient(135deg, #000000, #0000ff); /* Gradien hitam ke biru */
             color: white;
             min-height: 100vh;
             overflow-x: hidden; /* Menghilangkan scroll horizontal */
-            overflow-y: auto; /* Memastikan scroll vertikal aktif */
+            overflow-y: auto; /* Scroll vertikal aktif */
         }
 
         /* Elemen Sisi Biru */
@@ -29,17 +30,19 @@
             position: fixed;
             top: 0;
             bottom: 0;
-            width: 10vw; /* 10% dari lebar layar */
-            background: rgba(0, 0, 255, 0.8); /* Warna biru solid semi-transparan */
+            width: 15vw; /* Lebar sisi biru */
+            background: linear-gradient(90deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0)); /* Gradien biru transparan */
             z-index: -1;
         }
 
         .side-color.left {
             left: 0;
+            transform: skewX(-10deg); /* Efek miring untuk menyatu */
         }
 
         .side-color.right {
             right: 0;
+            transform: skewX(10deg); /* Efek miring untuk menyatu */
         }
 
         h2 {
@@ -64,6 +67,7 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             width: 90%; /* Lebar lebih fleksibel untuk layar kecil */
             max-width: 400px; /* Batas maksimal lebar */
+            box-sizing: border-box; /* Memastikan padding tidak melebihi lebar */
         }
 
         .payment-method:hover {
@@ -109,6 +113,7 @@
             padding: 20px;
             position: relative;
             z-index: 1;
+            box-sizing: border-box; /* Memastikan padding tidak melebihi lebar */
         }
 
         /* Media Query untuk Layar Kecil */
@@ -136,7 +141,7 @@
             }
 
             .side-color {
-                width: 5vw; /* Lebar sisi biru lebih kecil */
+                width: 10vw; /* Lebar sisi biru lebih kecil */
             }
         }
 
@@ -160,7 +165,7 @@
             }
 
             .side-color {
-                width: 3vw; /* Lebar sisi biru sangat kecil */
+                width: 5vw; /* Lebar sisi biru sangat kecil */
             }
         }
     </style>
@@ -173,7 +178,7 @@
 
     <!-- Konten Utama -->
     <div class="container">
-        <h2>@wanxxstore26</h2>
+        <h2>PAYMENT WANXX STORE26</h2>
 
         <div class="payment-method">
             <h3>QRIS NO FEE!!</h3>
