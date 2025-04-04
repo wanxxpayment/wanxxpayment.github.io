@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pembayaran Futuristik</title>
+    <title>Payment wanxxstore26 Pengusaha Muda Di Bidang Jual Beli Akun Games</title>
     <style>
         /* Animasi Gradient Glow */
         @keyframes glow {
@@ -62,6 +62,8 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 90%; /* Lebar lebih fleksibel untuk layar kecil */
+            max-width: 400px; /* Batas maksimal lebar */
         }
 
         .payment-method:hover {
@@ -70,8 +72,8 @@
         }
 
         img {
-            width: 200px;
-            height: 200px;
+            width: 100%; /* Gambar mengikuti lebar kontainer */
+            height: auto; /* Tinggi otomatis untuk menjaga proporsi */
             border-radius: 15px;
             object-fit: cover;
             border: 2px solid rgba(255, 255, 255, 0.5);
@@ -109,10 +111,57 @@
             z-index: 1;
         }
 
-        /* Tambahkan elemen dummy untuk memastikan halaman bisa di-scroll */
-        .dummy-content {
-            height: 150vh; /* Tinggi lebih dari viewport */
-            visibility: hidden; /* Tidak terlihat, tapi tetap memengaruhi layout */
+        /* Media Query untuk Layar Kecil */
+        @media (max-width: 768px) {
+            h2 {
+                font-size: 2rem; /* Ukuran teks lebih kecil */
+            }
+
+            .payment-method {
+                margin: 10px; /* Margin lebih kecil */
+                padding: 15px; /* Padding lebih kecil */
+            }
+
+            img {
+                width: 100%; /* Gambar tetap full-width */
+                height: auto;
+            }
+
+            h3 {
+                font-size: 1.2rem; /* Ukuran subjudul lebih kecil */
+            }
+
+            p {
+                font-size: 0.9rem; /* Ukuran teks deskripsi lebih kecil */
+            }
+
+            .side-color {
+                width: 5vw; /* Lebar sisi biru lebih kecil */
+            }
+        }
+
+        /* Media Query untuk Layar Sangat Kecil */
+        @media (max-width: 480px) {
+            h2 {
+                font-size: 1.5rem; /* Ukuran teks lebih kecil lagi */
+            }
+
+            .payment-method {
+                margin: 5px; /* Margin minimal */
+                padding: 10px; /* Padding minimal */
+            }
+
+            h3 {
+                font-size: 1rem; /* Ukuran subjudul minimal */
+            }
+
+            p {
+                font-size: 0.8rem; /* Ukuran teks deskripsi minimal */
+            }
+
+            .side-color {
+                width: 3vw; /* Lebar sisi biru sangat kecil */
+            }
         }
     </style>
 </head>
@@ -124,7 +173,7 @@
 
     <!-- Konten Utama -->
     <div class="container">
-        <h2>PAYMENT WANXX STORE26</h2>
+        <h2>@wanxxstore26</h2>
 
         <div class="payment-method">
             <h3>QRIS NO FEE!!</h3>
@@ -143,9 +192,6 @@
             <img src="https://i.ibb.co.com/2wbGtFQ/IMG-20250313-WA0289.jpg" alt="GoPay">
             <p>GOPAY : 083134115994 A.N SWAN MARKET</p>
         </div>
-
-        <!-- Dummy Content untuk Scroll -->
-        <div class="dummy-content"></div>
     </div>
 
 </body>
