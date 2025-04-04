@@ -16,11 +16,30 @@
             font-family: 'Arial', sans-serif;
             text-align: center;
             margin: 0;
-            padding: 20px;
+            padding: 0;
             background: linear-gradient(135deg, #000000, blue);
             color: white;
             min-height: 100vh;
-            overflow: hidden;
+            overflow-x: hidden; /* Menghilangkan scroll horizontal */
+            overflow-y: auto; /* Memastikan scroll vertikal aktif */
+        }
+
+        /* Elemen Sisi Biru */
+        .side-color {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            width: 10vw; /* 10% dari lebar layar */
+            background: rgba(0, 0, 255, 0.8); /* Warna biru solid semi-transparan */
+            z-index: -1;
+        }
+
+        .side-color.left {
+            left: 0;
+        }
+
+        .side-color.right {
+            right: 0;
         }
 
         h2 {
@@ -79,28 +98,54 @@
             color: rgba(255, 255, 255, 0.8);
             margin-top: 5px;
         }
+
+        /* Kontainer Utama */
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Tambahkan elemen dummy untuk memastikan halaman bisa di-scroll */
+        .dummy-content {
+            height: 150vh; /* Tinggi lebih dari viewport */
+            visibility: hidden; /* Tidak terlihat, tapi tetap memengaruhi layout */
+        }
     </style>
 </head>
 <body>
 
-    <h2>PAYMENT WANXX STORE26</h2>
+    <!-- Elemen Sisi Biru -->
+    <div class="side-color left"></div>
+    <div class="side-color right"></div>
 
-    <div class="payment-method">
-        <h3>QRIS NO FEE!!</h3>
-        <img src="https://i.ibb.co.com/CsX55zCL/IMG-20250313-WA0297.jpg" alt="QRIS">
-        <p>Scan kode QR untuk membayar dengan QRIS</p>
-    </div>
+    <!-- Konten Utama -->
+    <div class="container">
+        <h2>PAYMENT WANXX STORE26</h2>
 
-    <div class="payment-method">
-        <h3>DANA</h3>
-        <img src="https://i.ibb.co.com/rKdy0Hdb/IMG-20250313-WA0295.jpg" alt="Dana">
-        <p>DANA : 083134115994 A.N ONAH SAHRONAH</p>
-    </div>
+        <div class="payment-method">
+            <h3>QRIS NO FEE!!</h3>
+            <img src="https://i.ibb.co.com/CsX55zCL/IMG-20250313-WA0297.jpg" alt="QRIS">
+            <p>Scan kode QR untuk membayar dengan QRIS</p>
+        </div>
 
-    <div class="payment-method">
-        <h3>GOPAY</h3>
-        <img src="https://i.ibb.co.com/2wbGtFQ/IMG-20250313-WA0289.jpg" alt="GoPay">
-        <p>GOPAY : 083134115994 A.N SWAN MARKET</p>
+        <div class="payment-method">
+            <h3>DANA</h3>
+            <img src="https://i.ibb.co.com/rKdy0Hdb/IMG-20250313-WA0295.jpg" alt="Dana">
+            <p>DANA : 083134115994 A.N ONAH SAHRONAH</p>
+        </div>
+
+        <div class="payment-method">
+            <h3>GOPAY</h3>
+            <img src="https://i.ibb.co.com/2wbGtFQ/IMG-20250313-WA0289.jpg" alt="GoPay">
+            <p>GOPAY : 083134115994 A.N SWAN MARKET</p>
+        </div>
+
+        <!-- Dummy Content untuk Scroll -->
+        <div class="dummy-content"></div>
     </div>
 
 </body>
