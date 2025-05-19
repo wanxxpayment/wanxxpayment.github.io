@@ -6,9 +6,9 @@
   <title>Jual Akun Game Termurah</title>
 
   <!-- Meta SEO -->
-  <meta name="description" content="Toko jual akun game termurah dan terpercaya. Beli akun MLBB, Valorant, FIFA, PUBG hanya di WANXX STORE.">
+  <meta name="description" content="Toko jual akun game termurah dan terpercaya. Beli akun Free Fire, MLBB, Valorant, PUBG hanya di WANXX STORE.">
   <meta property="og:title" content="WANXX STORE - Jual Akun Game Termurah">
-  <meta property="og:description" content="Toko jual akun game termurah dan terpercaya. Beli akun MLBB, Valorant, FIFA, PUBG hanya di WANXX STORE.">
+  <meta property="og:description" content="Toko jual akun game termurah dan terpercaya. Beli akun Free Fire, MLBB, Valorant, PUBG hanya di WANXX STORE.">
   <meta property="og:image" content="https://via.placeholder.com/600x300?text=WANXX+STORE+BANNER ">
   <meta property="og:url" content="https://example.com ">
   <meta property="og:type" content="website">
@@ -21,29 +21,23 @@
       box-sizing: border-box;
     }
     body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #f9f9f9;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f7f7f7;
       color: #333;
       line-height: 1.6;
-      padding: 20px;
+      padding: 15px;
     }
 
     /* Header */
     header {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 20px;
-      background-color: #00bfff;
-      color: white;
-      border-radius: 8px;
-      margin-bottom: 20px;
-      flex-wrap: wrap;
-    }
-    .header-logo {
-      display: flex;
       align-items: center;
       gap: 10px;
+      background: #00bfff;
+      color: white;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 20px;
     }
     .header-logo img {
       width: 40px;
@@ -54,89 +48,76 @@
       font-size: 1.2rem;
       font-weight: 700;
     }
-    .header-search {
-      flex-grow: 1;
-      margin-left: 20px;
-      margin-top: 10px;
-    }
-    .header-search input {
+
+    /* Search Bar */
+    .search-bar input {
       width: 100%;
-      padding: 10px;
+      padding: 12px;
       border: none;
       border-radius: 8px;
+      margin-bottom: 20px;
       font-size: 1rem;
-      outline: none;
     }
 
-    /* Banner */
-    .banner {
-      width: 100%;
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin: 0 auto 30px auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Filter Buttons */
+    .filter-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .filter-buttons button {
+      flex: 1 1 calc(33% - 10px);
+      background: #e0e0e0;
+      border: none;
+      padding: 10px;
+      border-radius: 8px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .filter-buttons button.active {
+      background: #00bfff;
+      color: white;
     }
 
     /* Produk Grid */
     .produk-grid {
-      display: flex;
-      overflow-x: auto;
-      gap: 20px;
-      padding: 10px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 15px;
     }
-    .produk-grid::-webkit-scrollbar {
-      display: none;
-    }
-    @media (min-width: 768px) {
-      .produk-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 20px;
-        overflow-x: visible;
-      }
-    }
-
     .produk-card {
-      min-width: 250px;
       background: white;
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      padding: 15px;
       text-align: center;
-      transition: box-shadow 0.3s ease;
-      flex-shrink: 0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
     }
     .produk-card:hover {
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      transform: translateY(-5px);
     }
     .produk-img {
       width: 100%;
       height: auto;
-      border-radius: 12px;
-      margin-bottom: 15px;
+      border-radius: 8px;
+      margin-bottom: 10px;
     }
     .harga {
       color: #25D366;
       font-weight: 700;
-      font-size: 1.2rem;
       margin: 10px 0;
     }
-    button {
-      background-color: #00bfff;
+    .beli-btn {
+      background-color: #25D366;
       color: white;
       border: none;
-      padding: 12px 20px;
+      padding: 10px;
       border-radius: 8px;
+      font-weight: bold;
       cursor: pointer;
-      font-size: 1rem;
-      font-weight: 600;
       width: 100%;
-      transition: background-color 0.3s ease;
-    }
-    button:hover {
-      background-color: #128C7E;
     }
 
     /* Footer */
@@ -144,77 +125,82 @@
       text-align: center;
       margin-top: 40px;
       font-size: 0.9rem;
-      color: #666;
-    }
-    footer a {
-      color: #00bfff;
-      text-decoration: none;
-      margin: 0 5px;
-    }
-
-    /* Responsive tweak */
-    @media (max-width: 600px) {
-      .produk-grid {
-        flex-direction: column;
-        align-items: center;
-      }
-      .produk-card {
-        min-width: 90%;
-      }
+      color: #aaa;
     }
   </style>
 </head>
 <body>
+
   <!-- Header -->
   <header>
     <div class="header-logo">
-      <img src="https://i.ibb.co.com/67ytF0Wf/Whats-App-Image-2025-05-19-at-00-29-47-1c5ff881.jpg" alt="Logo Toko" onerror="this.onerror=null; this.src='https://via.placeholder.com/40 ';" />
-      <div class="header-title">WANXX STORE</div>
+      <img src="https://via.placeholder.com/40?text=W " alt="Logo Toko" />
     </div>
-    <div class="header-search">
-      <input type="text" placeholder="Cari produk..." onkeyup="cariProduk()" id="searchInput" />
-    </div>
+    <div class="header-title">WANXX STORE</div>
   </header>
 
-  <!-- Banner -->
-  <img src="https://i.ibb.co.com/V5QPHsm/Whats-App-Image-2025-05-19-at-12-23-07-5d185aba.jpg" alt="Banner Toko Akun Game" class="banner" />
+  <!-- Search Bar -->
+  <div class="search-bar">
+    <input type="text" placeholder="Cari akun..." id="searchInput" onkeyup="cariProduk()" />
+  </div>
+
+  <!-- Filter Buttons -->
+  <div class="filter-buttons">
+    <button onclick="filterKategori(this, 'all')" class="active">Semua</button>
+    <button onclick="filterKategori(this, 'ff')">Free Fire</button>
+    <button onclick="filterKategori(this, 'mlbb')">MLBB</button>
+    <button onclick="filterKategori(this, 'valorant')">Valorant</button>
+    <button onclick="filterKategori(this, 'pubg')">PUBG</button>
+    <button onclick="filterKategori(this, 'fifa')">FIFA</button>
+  </div>
 
   <!-- Produk Grid -->
-  <main id="produk" class="produk-grid">
-    <!-- Produk 1 -->
-    <div class="produk-card" data-nama="AKUN FF">
-      <img src="https://via.placeholder.com/250x150?text=Free+Fire " alt="Free Fire Level Tinggi" class="produk-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/250x150?text=Image+Error ';" />
-      <h2>AKUN FF</h2>
+  <div class="produk-grid" id="produkGrid">
+    <!-- Produk FF -->
+    <div class="produk-card" data-kategori="ff">
+      <img src="https://via.placeholder.com/150x100?text=Free+Fire " alt="Free Fire" class="produk-img" />
+      <h3>AKUN FF</h3>
       <p class="harga">Rp50.000</p>
-      <button onclick="beli('Free Fire Level Tinggi', 'Rp50.000')">Beli Sekarang</button>
+      <button class="beli-btn" onclick="beli('Free Fire Level Max', 'Rp50.000')">Beli Sekarang</button>
     </div>
-    <!-- Produk 2 -->
-    <div class="produk-card" data-nama="AKUN VALORANT">
-      <img src="https://via.placeholder.com/250x150?text=VALORANT " alt="Valorant Level 30" class="produk-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/250x150?text=Image+Error ';" />
-      <h2>AKUN VALORANT</h2>
+
+    <!-- Produk MLBB -->
+    <div class="produk-card" data-kategori="mlbb">
+      <img src="https://via.placeholder.com/150x100?text=Mobile+Legends " alt="MLBB" class="produk-img" />
+      <h3>AKUN MLBB</h3>
+      <p class="harga">Rp60.000</p>
+      <button class="beli-btn" onclick="beli('MLBB Level 50', 'Rp60.000')">Beli Sekarang</button>
+    </div>
+
+    <!-- Produk Valorant -->
+    <div class="produk-card" data-kategori="valorant">
+      <img src="https://via.placeholder.com/150x100?text=Valorant " alt="Valorant" class="produk-img" />
+      <h3>AKUN VALORANT</h3>
       <p class="harga">Rp75.000</p>
-      <button onclick="beli('Valorant Level 30', 'Rp75.000')">Beli Sekarang</button>
+      <button class="beli-btn" onclick="beli('Valorant Level 30', 'Rp75.000')">Beli Sekarang</button>
     </div>
-    <!-- Produk 3 -->
-    <div class="produk-card" data-nama="AKUN FIFA">
-      <img src="https://via.placeholder.com/250x150?text=FIFA " alt="FIFA Coins 100k" class="produk-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/250x150?text=Image+Error ';" />
-      <h2>AKUN FIFA</h2>
-      <p class="harga">Rp25.000</p>
-      <button onclick="beli('FIFA Coins 100k', 'Rp25.000')">Beli Sekarang</button>
-    </div>
-    <!-- Produk 4 -->
-    <div class="produk-card" data-nama="AKUN PUBG">
-      <img src="https://via.placeholder.com/250x150?text=PUBG " alt="PUBG Level 100" class="produk-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/250x150?text=Image+Error ';" />
-      <h2>AKUN PUBG</h2>
+
+    <!-- Produk PUBG -->
+    <div class="produk-card" data-kategori="pubg">
+      <img src="https://via.placeholder.com/150x100?text=PUBG " alt="PUBG" class="produk-img" />
+      <h3>AKUN PUBG</h3>
       <p class="harga">Rp100.000</p>
-      <button onclick="beli('PUBG Level 100', 'Rp100.000')">Beli Sekarang</button>
+      <button class="beli-btn" onclick="beli('PUBG Level 100', 'Rp100.000')">Beli Sekarang</button>
     </div>
-  </main>
+
+    <!-- Produk FIFA -->
+    <div class="produk-card" data-kategori="fifa">
+      <img src="https://via.placeholder.com/150x100?text=FIFA " alt="FIFA" class="produk-img" />
+      <h3>AKUN FIFA</h3>
+      <p class="harga">Rp25.000</p>
+      <button class="beli-btn" onclick="beli('FIFA Coins 100k', 'Rp25.000')">Beli Sekarang</button>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 wanxx store. All rights reserved.</p>
-    <p><a href="/privacy-policy">Privacy Policy</a> | <a href="/faq">FAQ</a></p>
+    <p>&copy; 2025 WANXX STORE. All rights reserved.</p>
+    <p><a href="/privacy-policy" style="color:#00bfff;">Privacy Policy</a> | <a href="/faq" style="color:#00bfff;">FAQ</a></p>
   </footer>
 
   <!-- Script -->
@@ -227,37 +213,39 @@ No. WA: `);
       window.open(`https://wa.me/ ${noWa}?text=${pesan}`, '_blank');
     }
 
-    let searchTimeout;
     function cariProduk() {
-      clearTimeout(searchTimeout);
-      searchTimeout = setTimeout(() => {
-        const input = document.getElementById("searchInput").value.toLowerCase();
-        const produkCards = document.querySelectorAll(".produk-card");
-        let found = false;
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const cards = document.querySelectorAll(".produk-card");
+      let found = false;
 
-        produkCards.forEach((card) => {
-          const namaProduk = card.getAttribute("data-nama").toLowerCase();
-          if (namaProduk.includes(input)) {
-            card.style.display = "block";
-            found = true;
-          } else {
-            card.style.display = "none";
-          }
-        });
-
-        const noResult = document.getElementById("no-result");
-        if (!found && !noResult) {
-          const div = document.createElement("div");
-          div.id = "no-result";
-          div.textContent = "Tidak ada produk ditemukan.";
-          div.style.textAlign = "center";
-          div.style.marginTop = "20px";
-          document.getElementById("produk").appendChild(div);
-        } else if (found && noResult) {
-          noResult.remove();
+      cards.forEach(card => {
+        const title = card.querySelector("h3").innerText.toLowerCase();
+        if (title.includes(input)) {
+          card.style.display = "block";
+          found = true;
+        } else {
+          card.style.display = "none";
         }
-      }, 300);
+      });
+
+      // Optional: Tambahkan notifikasi jika tidak ditemukan
+    }
+
+    function filterKategori(btn, kategori) {
+      const buttons = document.querySelectorAll(".filter-buttons button");
+      buttons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const cards = document.querySelectorAll(".produk-card");
+      cards.forEach(card => {
+        if (kategori === "all" || card.getAttribute("data-kategori") === kategori) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
     }
   </script>
+
 </body>
 </html>
