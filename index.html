@@ -1,203 +1,248 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <!-- Memungkinkan zoom -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <title>Wanxx26 Adalah Sebuah Website Jual Beli Akun Games</title>
-    <style>
-        /* Animasi Gradient Glow */
-        @keyframes glow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jual Akun Game Termurah</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins :wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #000000, #0000ff); /* Gradien hitam ke biru */
-            color: white;
-            min-height: 100vh;
-            overflow-x: hidden; /* Menghilangkan scroll horizontal */
-            overflow-y: auto; /* Scroll vertikal aktif */
-        }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+      padding: 20px;
+    }
 
-        /* Elemen Sisi Biru */
-        .side-color {
-            position: fixed;
-            top: 0;
-            bottom: 0;
-            width: 15vw; /* Lebar sisi biru */
-            background: linear-gradient(90deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0)); /* Gradien biru transparan */
-            z-index: -1;
-        }
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      background-color: #00bfff;
+      color: white;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
 
-        .side-color.left {
-            left: 0;
-            transform: skewX(-10deg); /* Efek miring untuk menyatu */
-        }
+    .header-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-        .side-color.right {
-            right: 0;
-            transform: skewX(10deg); /* Efek miring untuk menyatu */
-        }
+    .header-logo img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
 
-        h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            background: linear-gradient(45deg, #ff6f61, #ffcc00, #6effb4, #61fff6);
-            background-size: 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: glow 5s infinite;
-        }
+    .header-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
 
-        .payment-method {
-            display: inline-block;
-            margin: 20px;
-            padding: 20px;
-            border-radius: 15px;
-            background: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            width: 90%; /* Lebar lebih fleksibel untuk layar kecil */
-            max-width: 400px; /* Batas maksimal lebar */
-            box-sizing: border-box; /* Memastikan padding tidak melebihi lebar */
-        }
+    .header-search {
+      flex-grow: 1;
+      margin-left: 20px;
+    }
 
-        .payment-method:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-        }
+    .header-search input {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      outline: none;
+    }
 
-        img {
-            width: 100%; /* Gambar mengikuti lebar kontainer */
-            height: auto; /* Tinggi otomatis untuk menjaga proporsi */
-            border-radius: 15px;
-            object-fit: cover;
-            border: 2px solid rgba(255, 255, 255, 0.5);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease;
-        }
+    .header-menu {
+      position: relative;
+      cursor: pointer;
+    }
 
-        img:hover {
-            transform: scale(1.1);
-        }
+    .header-menu span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 3px 0;
+      border-radius: 2px;
+    }
 
-        h3 {
-            font-size: 1.5rem;
-            margin-top: 10px;
-            background: linear-gradient(45deg, #ff6f61, #ffcc00, #6effb4, #61fff6);
-            background-size: 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: glow 5s infinite;
-        }
+    /* Banner */
+    .banner {
+      width: 100%;
+      max-width: 1200px;
+      height: auto;
+      display: block;
+      margin: 0 auto 30px auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
 
-        p {
-            font-size: 1rem;
-            color: rgba(255, 255, 255, 0.8);
-            margin-top: 5px;
-        }
+    /* Produk Grid (Horizontal Scrollable) */
+    .produk-grid {
+      display: flex;
+      overflow-x: auto; /* Membuat produk bisa digeser horizontal */
+      gap: 20px;
+      padding: 10px;
+    }
 
-        /* Kontainer Utama */
-        .container {
-            max-width: 1200px;
-            width: 100%;
-            margin: 0 auto;
-            padding: 20px;
-            position: relative;
-            z-index: 1;
-            box-sizing: border-box; /* Memastikan padding tidak melebihi lebar */
-        }
+    .produk-grid::-webkit-scrollbar {
+      display: none; /* Menghilangkan scrollbar */
+    }
 
-        /* Media Query untuk Layar Kecil */
-        @media (max-width: 768px) {
-            h2 {
-                font-size: 2rem; /* Ukuran teks lebih kecil */
-            }
+    .produk-card {
+      min-width: 250px; /* Lebar minimum setiap kartu produk */
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: box-shadow 0.3s ease;
+      flex-shrink: 0; /* Mencegah kartu menyusut */
+    }
 
-            .payment-method {
-                margin: 10px; /* Margin lebih kecil */
-                padding: 15px; /* Padding lebih kecil */
-            }
+    .produk-card:hover {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
 
-            img {
-                width: 100%; /* Gambar tetap full-width */
-                height: auto;
-            }
+    .produk-img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
 
-            h3 {
-                font-size: 1.2rem; /* Ukuran subjudul lebih kecil */
-            }
+    .harga {
+      color: #25D366;
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin: 10px 0;
+    }
 
-            p {
-                font-size: 0.9rem; /* Ukuran teks deskripsi lebih kecil */
-            }
+    button {
+      background-color: #00bfff;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+      width: 100%;
+      transition: background-color 0.3s ease;
+    }
 
-            .side-color {
-                width: 10vw; /* Lebar sisi biru lebih kecil */
-            }
-        }
+    button:hover {
+      background-color: #128C7E;
+    }
 
-        /* Media Query untuk Layar Sangat Kecil */
-        @media (max-width: 480px) {
-            h2 {
-                font-size: 1.5rem; /* Ukuran teks lebih kecil lagi */
-            }
-
-            .payment-method {
-                margin: 5px; /* Margin minimal */
-                padding: 10px; /* Padding minimal */
-            }
-
-            h3 {
-                font-size: 1rem; /* Ukuran subjudul minimal */
-            }
-
-            p {
-                font-size: 0.8rem; /* Ukuran teks deskripsi minimal */
-            }
-
-            .side-color {
-                width: 5vw; /* Lebar sisi biru sangat kecil */
-            }
-        }
-    </style>
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
 </head>
 <body>
-
-    <!-- Elemen Sisi Biru -->
-    <div class="side-color left"></div>
-    <div class="side-color right"></div>
-
-    <!-- Konten Utama -->
-    <div class="container">
-        <h2>PAYMENT WANXX STORE26</h2>
-
-        <div class="payment-method">
-            <h3>QRIS NO FEE!!</h3>
-            <img src="https://i.ibb.co.com/CsX55zCL/IMG-20250313-WA0297.jpg" alt="QRIS">
-            <p>Scan kode QR untuk membayar dengan QRIS</p>
-        </div>
-
-        <div class="payment-method">
-            <h3>DANA</h3>
-            <img src="https://i.ibb.co.com/rKdy0Hdb/IMG-20250313-WA0295.jpg" alt="Dana">
-            <p>DANA : 083134115994 A.N ONAH SAHRONAH</p>
-        </div>
-
-        <div class="payment-method">
-            <h3>GOPAY</h3>
-            <img src="https://i.ibb.co.com/2wbGtFQ/IMG-20250313-WA0289.jpg" alt="GoPay">
-            <p>GOPAY : 083134115994 A.N SWAN MARKET</p>
-        </div>
+  <!-- Header -->
+  <header>
+    <!-- Logo dan Nama Toko -->
+    <div class="header-logo">
+      <img src="https://i.ibb.co.com/67ytF0Wf/Whats-App-Image-2025-05-19-at-00-29-47-1c5ff881.jpg" alt="Logo Toko" onerror="this.src='placeholder.jpg';" />
+      <div class="header-title">WANXX STORE</div>
     </div>
 
+    <!-- Search Bar -->
+    <div class="header-search">
+      <input type="text" placeholder="Cari produk..." onkeyup="cariProduk()" id="searchInput" />
+    </div>
+
+    <!-- Menu Titik Tiga -->
+    <div class="header-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+  <!-- Banner -->
+  <img src="https://i.ibb.co.com/V5QPHsm/Whats-App-Image-2025-05-19-at-12-23-07-5d185aba.jpg" alt="Banner Toko Akun Game" class="banner" />
+
+  <!-- Produk Grid (Horizontal Scrollable) -->
+  <div class="produk-grid" id="produk">
+    <!-- Produk 1 -->
+    <div class="produk-card" data-nama="AKUN MLBB">
+      <img src="images/mlbb.jpg" alt="Mobile Legends Level 50" class="produk-img" onerror="this.src='placeholder.jpg';" />
+      <h2>AKUN FF</h2>
+      <p class="harga">Rp50.000</p>
+      <button onclick="beli('Mobile Legends Level 50', 'Rp50.000')">Beli Sekarang</button>
+    </div>
+
+    <!-- Produk 2 -->
+    <div class="produk-card" data-nama="AKUN VALORANT">
+      <img src="images/valorant.jpg" alt="Valorant Level 30" class="produk-img" onerror="this.src='placeholder.jpg';" />
+      <h2>AKUN FF</h2>
+      <p class="harga">Rp75.000</p>
+      <button onclick="beli('Valorant Level 30', 'Rp75.000')">Beli Sekarang</button>
+    </div>
+
+    <!-- Produk 3 -->
+    <div class="produk-card" data-nama="AKUN FIFA">
+      <img src="images/fifa.jpg" alt="FIFA Coins 100k" class="produk-img" onerror="this.src='placeholder.jpg';" />
+      <h2>AKUN FIFA</h2>
+      <p class="harga">Rp25.000</p>
+      <button onclick="beli('FIFA Coins 100k', 'Rp25.000')">Beli Sekarang</button>
+    </div>
+
+    <!-- Produk 4 -->
+    <div class="produk-card" data-nama="AKUN PUBG">
+      <img src="images/pubg.jpg" alt="PUBG Level 100" class="produk-img" onerror="this.src='placeholder.jpg';" />
+      <h2>AKUN PUBG</h2>
+      <p class="harga">Rp100.000</p>
+      <button onclick="beli('PUBG Level 100', 'Rp100.000')">Beli Sekarang</button>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 wanxx store. All rights reserved.
+  </footer>
+
+  <script>
+    // Fungsi untuk membeli produk
+    function beli(itemName, harga) {
+      const noWa = "628123456789"; // Ganti dengan nomor WhatsApp kamu
+      const pesan = encodeURIComponent(`Saya mau beli ${itemName}, Harga ${harga}\nNama: \nNo. WA: `);
+      window.open(`https://wa.me/ ${noWa}?text=${pesan}`, '_blank');
+    }
+
+    // Fungsi untuk pencarian produk
+    function cariProduk() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const produkCards = document.querySelectorAll(".produk-card");
+
+      produkCards.forEach((card) => {
+        const namaProduk = card.getAttribute("data-nama").toLowerCase();
+        if (namaProduk.includes(input)) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    }
+  </script>
 </body>
 </html>
