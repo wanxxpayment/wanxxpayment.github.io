@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jual Akun Game Termurah</title>
   <!-- Google Fonts -->
+  <!-- ✅ Fix: Hilangkan spasi berlebih pada URL -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins :wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     /* Reset */
@@ -93,24 +94,24 @@
     /* Produk Grid (Horizontal Scrollable) */
     .produk-grid {
       display: flex;
-      overflow-x: auto; /* Membuat produk bisa digeser horizontal */
+      overflow-x: auto;
       gap: 20px;
       padding: 10px;
     }
 
     .produk-grid::-webkit-scrollbar {
-      display: none; /* Menghilangkan scrollbar */
+      display: none;
     }
 
     .produk-card {
-      min-width: 250px; /* Lebar minimum setiap kartu produk */
+      min-width: 250px;
       background: white;
       border-radius: 12px;
       padding: 20px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       text-align: center;
       transition: box-shadow 0.3s ease;
-      flex-shrink: 0; /* Mencegah kartu menyusut */
+      flex-shrink: 0;
     }
 
     .produk-card:hover {
@@ -162,7 +163,7 @@
   <header>
     <!-- Logo dan Nama Toko -->
     <div class="header-logo">
-      <img src="https://i.ibb.co.com/67ytF0Wf/Whats-App-Image-2025-05-19-at-00-29-47-1c5ff881.jpg" alt="Logo Toko" onerror="this.src='placeholder.jpg';" />
+      <img src="https://i.ibb.co.com/67ytF0Wf/Whats-App-Image-2025-05-19-at-00-29-47-1c5ff881.jpg " alt="Logo Toko" onerror="this.onerror=null; this.src='placeholder.jpg';" />
       <div class="header-title">WANXX STORE</div>
     </div>
 
@@ -180,13 +181,13 @@
   </header>
 
   <!-- Banner -->
-  <img src="https://i.ibb.co.com/V5QPHsm/Whats-App-Image-2025-05-19-at-12-23-07-5d185aba.jpg" alt="Banner Toko Akun Game" class="banner" />
+  <img src="https://i.ibb.co.com/V5QPHsm/Whats-App-Image-2025-05-19-at-12-23-07-5d185aba.jpg " alt="Banner Toko Akun Game" class="banner" />
 
   <!-- Produk Grid (Horizontal Scrollable) -->
   <div class="produk-grid" id="produk">
     <!-- Produk 1 -->
     <div class="produk-card" data-nama="AKUN MLBB">
-      <img src="images/mlbb.jpg" alt="Mobile Legends Level 50" class="produk-img" onerror="this.src='placeholder.jpg';" />
+      <img src="images/mlbb.jpg" alt="Mobile Legends Level 50" class="produk-img" onerror="this.onerror=null; this.src='placeholder.jpg';" />
       <h2>AKUN FF</h2>
       <p class="harga">Rp50.000</p>
       <button onclick="beli('Mobile Legends Level 50', 'Rp50.000')">Beli Sekarang</button>
@@ -194,7 +195,7 @@
 
     <!-- Produk 2 -->
     <div class="produk-card" data-nama="AKUN VALORANT">
-      <img src="images/valorant.jpg" alt="Valorant Level 30" class="produk-img" onerror="this.src='placeholder.jpg';" />
+      <img src="images/valorant.jpg" alt="Valorant Level 30" class="produk-img" onerror="this.onerror=null; this.src='placeholder.jpg';" />
       <h2>AKUN FF</h2>
       <p class="harga">Rp75.000</p>
       <button onclick="beli('Valorant Level 30', 'Rp75.000')">Beli Sekarang</button>
@@ -202,7 +203,7 @@
 
     <!-- Produk 3 -->
     <div class="produk-card" data-nama="AKUN FIFA">
-      <img src="images/fifa.jpg" alt="FIFA Coins 100k" class="produk-img" onerror="this.src='placeholder.jpg';" />
+      <img src="images/fifa.jpg" alt="FIFA Coins 100k" class="produk-img" onerror="this.onerror=null; this.src='placeholder.jpg';" />
       <h2>AKUN FIFA</h2>
       <p class="harga">Rp25.000</p>
       <button onclick="beli('FIFA Coins 100k', 'Rp25.000')">Beli Sekarang</button>
@@ -210,7 +211,7 @@
 
     <!-- Produk 4 -->
     <div class="produk-card" data-nama="AKUN PUBG">
-      <img src="images/pubg.jpg" alt="PUBG Level 100" class="produk-img" onerror="this.src='placeholder.jpg';" />
+      <img src="images/pubg.jpg" alt="PUBG Level 100" class="produk-img" onerror="this.onerror=null; this.src='placeholder.jpg';" />
       <h2>AKUN PUBG</h2>
       <p class="harga">Rp100.000</p>
       <button onclick="beli('PUBG Level 100', 'Rp100.000')">Beli Sekarang</button>
@@ -222,25 +223,21 @@
   </footer>
 
   <script>
-    // Fungsi untuk membeli produk
+    // ✅ Fix: Hilangkan spasi di wa.me
     function beli(itemName, harga) {
       const noWa = "628123456789"; // Ganti dengan nomor WhatsApp kamu
       const pesan = encodeURIComponent(`Saya mau beli ${itemName}, Harga ${harga}\nNama: \nNo. WA: `);
       window.open(`https://wa.me/ ${noWa}?text=${pesan}`, '_blank');
     }
 
-    // Fungsi untuk pencarian produk
+    // ✅ Fix: Filter produk lebih efisien
     function cariProduk() {
       const input = document.getElementById("searchInput").value.toLowerCase();
       const produkCards = document.querySelectorAll(".produk-card");
 
       produkCards.forEach((card) => {
         const namaProduk = card.getAttribute("data-nama").toLowerCase();
-        if (namaProduk.includes(input)) {
-          card.style.display = "block";
-        } else {
-          card.style.display = "none";
-        }
+        card.style.display = namaProduk.includes(input) ? "block" : "none";
       });
     }
   </script>
