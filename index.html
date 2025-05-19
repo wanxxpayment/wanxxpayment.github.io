@@ -2,14 +2,14 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Jual Akun Game Termurah</title>
 
   <!-- Meta SEO -->
   <meta name="description" content="Toko jual akun game termurah dan terpercaya. Beli akun Free Fire, MLBB, Valorant, PUBG hanya di WANXX STORE.">
   <meta property="og:title" content="WANXX STORE - Jual Akun Game Termurah">
   <meta property="og:description" content="Toko jual akun game termurah dan terpercaya. Beli akun Free Fire, MLBB, Valorant, PUBG hanya di WANXX STORE.">
-  <meta property="og:image" content="https://via.placeholder.com/600x300?text=WANXX+STORE+BANNER ">
+  <meta property="og:image" content="https://via.placeholder.com/600x300?text=WANXX+STORE ">
   <meta property="og:url" content="https://example.com ">
   <meta property="og:type" content="website">
 
@@ -87,6 +87,14 @@
       grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
       gap: 15px;
     }
+
+    /* Untuk Mobile: 2 Kolom */
+    @media (max-width: 600px) {
+      .produk-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
     .produk-card {
       background: white;
       border-radius: 10px;
@@ -94,38 +102,89 @@
       text-align: center;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       transition: transform 0.3s ease;
+      position: relative;
     }
+
     .produk-card:hover {
       transform: translateY(-5px);
     }
+
+    .stiker {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: #ff9900;
+      color: white;
+      font-size: 0.7rem;
+      padding: 4px 8px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
     .produk-img {
       width: 100%;
       height: auto;
       border-radius: 8px;
       margin-bottom: 10px;
     }
+
     .harga {
       color: #25D366;
       font-weight: 700;
       margin: 10px 0;
     }
-    .beli-btn {
+
+    .detail {
+      font-size: 0.85rem;
+      color: #666;
+      margin: 5px 0 10px;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 10px;
+      justify-content: space-between;
+    }
+
+    .beli-btn, .detail-btn {
       background-color: #25D366;
       color: white;
       border: none;
-      padding: 10px;
-      border-radius: 8px;
+      padding: 8px 10px;
+      border-radius: 6px;
       font-weight: bold;
       cursor: pointer;
-      width: 100%;
+      flex: 1;
+      transition: background 0.3s ease;
     }
 
-    /* Footer */
+    .detail-btn {
+      background-color: #00bfff;
+    }
+
+    .beli-btn:hover {
+      background-color: #20a95e;
+    }
+
+    .detail-btn:hover {
+      background-color: #009acc;
+    }
+
     footer {
       text-align: center;
       margin-top: 40px;
       font-size: 0.9rem;
       color: #aaa;
+    }
+
+    .footer-links a {
+      color: #00bfff;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -156,57 +215,97 @@
 
   <!-- Produk Grid -->
   <div class="produk-grid" id="produkGrid">
+
     <!-- Produk FF -->
     <div class="produk-card" data-kategori="ff">
+      <span class="stiker">Cepat</span>
       <img src="https://via.placeholder.com/150x100?text=Free+Fire " alt="Free Fire" class="produk-img" />
       <h3>AKUN FF</h3>
       <p class="harga">Rp50.000</p>
-      <button class="beli-btn" onclick="beli('Free Fire Level Max', 'Rp50.000')">Beli Sekarang</button>
+      <p class="detail">Level Max | Diamond: 10.000 | Top Up</p>
+      <div class="btn-group">
+        <button class="beli-btn" onclick="beli('Free Fire Level Max', 'Rp50.000')">Beli Sekarang</button>
+        <a href="/detail-ff.html" style="text-decoration: none;">
+          <button class="detail-btn">Lihat Detail</button>
+        </a>
+      </div>
     </div>
 
     <!-- Produk MLBB -->
     <div class="produk-card" data-kategori="mlbb">
+      <span class="stiker">Cepat</span>
       <img src="https://via.placeholder.com/150x100?text=Mobile+Legends " alt="MLBB" class="produk-img" />
       <h3>AKUN MLBB</h3>
       <p class="harga">Rp60.000</p>
-      <button class="beli-btn" onclick="beli('MLBB Level 50', 'Rp60.000')">Beli Sekarang</button>
+      <p class="detail">Level 50 | Hero 50+ | Battle Pass</p>
+      <div class="btn-group">
+        <button class="beli-btn" onclick="beli('MLBB Level 50', 'Rp60.000')">Beli Sekarang</button>
+        <a href="/detail-mlbb.html" style="text-decoration: none;">
+          <button class="detail-btn">Lihat Detail</button>
+        </a>
+      </div>
     </div>
 
     <!-- Produk Valorant -->
     <div class="produk-card" data-kategori="valorant">
+      <span class="stiker">Cepat</span>
       <img src="https://via.placeholder.com/150x100?text=Valorant " alt="Valorant" class="produk-img" />
       <h3>AKUN VALORANT</h3>
       <p class="harga">Rp75.000</p>
-      <button class="beli-btn" onclick="beli('Valorant Level 30', 'Rp75.000')">Beli Sekarang</button>
+      <p class="detail">Level 30 | Rank: Platinum | Full Skin</p>
+      <div class="btn-group">
+        <button class="beli-btn" onclick="beli('Valorant Level 30', 'Rp75.000')">Beli Sekarang</button>
+        <a href="/detail-valorant.html" style="text-decoration: none;">
+          <button class="detail-btn">Lihat Detail</button>
+        </a>
+      </div>
     </div>
 
     <!-- Produk PUBG -->
     <div class="produk-card" data-kategori="pubg">
+      <span class="stiker">Cepat</span>
       <img src="https://via.placeholder.com/150x100?text=PUBG " alt="PUBG" class="produk-img" />
       <h3>AKUN PUBG</h3>
       <p class="harga">Rp100.000</p>
-      <button class="beli-btn" onclick="beli('PUBG Level 100', 'Rp100.000')">Beli Sekarang</button>
+      <p class="detail">Level 100 | UC: 6000 | Emote Lengkap</p>
+      <div class="btn-group">
+        <button class="beli-btn" onclick="beli('PUBG Level 100', 'Rp100.000')">Beli Sekarang</button>
+        <a href="/detail-pubg.html" style="text-decoration: none;">
+          <button class="detail-btn">Lihat Detail</button>
+        </a>
+      </div>
     </div>
 
     <!-- Produk FIFA -->
     <div class="produk-card" data-kategori="fifa">
+      <span class="stiker">Cepat</span>
       <img src="https://via.placeholder.com/150x100?text=FIFA " alt="FIFA" class="produk-img" />
       <h3>AKUN FIFA</h3>
       <p class="harga">Rp25.000</p>
-      <button class="beli-btn" onclick="beli('FIFA Coins 100k', 'Rp25.000')">Beli Sekarang</button>
+      <p class="detail">Coins 100k | FUT | PS4</p>
+      <div class="btn-group">
+        <button class="beli-btn" onclick="beli('FIFA Coins 100k', 'Rp25.000')">Beli Sekarang</button>
+        <a href="/detail-fifa.html" style="text-decoration: none;">
+          <button class="detail-btn">Lihat Detail</button>
+        </a>
+      </div>
     </div>
+
   </div>
 
   <!-- Footer -->
   <footer>
     <p>&copy; 2025 WANXX STORE. All rights reserved.</p>
-    <p><a href="/privacy-policy" style="color:#00bfff;">Privacy Policy</a> | <a href="/faq" style="color:#00bfff;">FAQ</a></p>
+    <p class="footer-links">
+      <a href="/privacy-policy">Privacy Policy</a> | 
+      <a href="/faq">FAQ</a>
+    </p>
   </footer>
 
   <!-- Script -->
   <script>
     function beli(itemName, harga) {
-      const noWa = "628123456789";
+      const noWa = "628123456789"; // Ganti dengan nomor WA aktif kamu
       const pesan = encodeURIComponent(`Saya mau beli ${itemName}, Harga ${harga}
 Nama: 
 No. WA: `);
@@ -228,7 +327,9 @@ No. WA: `);
         }
       });
 
-      // Optional: Tambahkan notifikasi jika tidak ditemukan
+      if (!found && input !== "") {
+        alert("Produk tidak ditemukan.");
+      }
     }
 
     function filterKategori(btn, kategori) {
@@ -248,4 +349,4 @@ No. WA: `);
   </script>
 
 </body>
-</html>
+</html
