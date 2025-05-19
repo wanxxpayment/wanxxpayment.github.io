@@ -38,6 +38,7 @@
       color: white;
       border-radius: 8px;
       margin-bottom: 20px;
+      flex-wrap: wrap;
     }
     .header-logo {
       display: flex;
@@ -56,6 +57,7 @@
     .header-search {
       flex-grow: 1;
       margin-left: 20px;
+      margin-top: 10px;
     }
     .header-search input {
       width: 100%;
@@ -65,23 +67,11 @@
       font-size: 1rem;
       outline: none;
     }
-    .header-menu {
-      position: relative;
-      cursor: pointer;
-    }
-    .header-menu span {
-      display: block;
-      width: 25px;
-      height: 3px;
-      background-color: white;
-      margin: 3px 0;
-      border-radius: 2px;
-    }
 
     /* Banner */
     .banner {
       width: 100%;
-      max-width: 1200px;
+      max-width: 100%;
       height: auto;
       display: block;
       margin: 0 auto 30px auto;
@@ -161,54 +151,60 @@
       text-decoration: none;
       margin: 0 5px;
     }
+
+    /* Responsive tweak */
+    @media (max-width: 600px) {
+      .produk-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+      .produk-card {
+        min-width: 90%;
+      }
+    }
   </style>
 </head>
 <body>
   <!-- Header -->
   <header>
     <div class="header-logo">
-      <img src="https://via.placeholder.com/40?text=W " alt="Logo Toko" />
+      <img src="https://i.ibb.co.com/67ytF0Wf/Whats-App-Image-2025-05-19-at-00-29-47-1c5ff881.jpg" alt="Logo Toko" onerror="this.onerror=null; this.src='https://via.placeholder.com/40 ';" />
       <div class="header-title">WANXX STORE</div>
     </div>
     <div class="header-search">
       <input type="text" placeholder="Cari produk..." onkeyup="cariProduk()" id="searchInput" />
     </div>
-    <div class="header-menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
   </header>
 
   <!-- Banner -->
-  <img src="https://via.placeholder.com/1200x300?text=WANXX+STORE+BANNER " alt="Banner Toko Akun Game" class="banner" />
+  <img src="https://i.ibb.co.com/V5QPHsm/Whats-App-Image-2025-05-19-at-12-23-07-5d185aba.jpg" alt="Banner Toko Akun Game" class="banner" />
 
   <!-- Produk Grid -->
   <main id="produk" class="produk-grid">
     <!-- Produk 1 -->
     <div class="produk-card" data-nama="AKUN FF">
-      <img src="https://via.placeholder.com/250x150?text=Free+Fire " alt="Free Fire Level Tinggi" class="produk-img" />
+      <img src="https://via.placeholder.com/250x150?text=Free+Fire " alt="Free Fire Level Tinggi" class="produk-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/250x150?text=Image+Error ';" />
       <h2>AKUN FF</h2>
       <p class="harga">Rp50.000</p>
       <button onclick="beli('Free Fire Level Tinggi', 'Rp50.000')">Beli Sekarang</button>
     </div>
     <!-- Produk 2 -->
     <div class="produk-card" data-nama="AKUN VALORANT">
-      <img src="https://via.placeholder.com/250x150?text=VALORANT " alt="Valorant Level 30" class="produk-img" />
+      <img src="https://via.placeholder.com/250x150?text=VALORANT " alt="Valorant Level 30" class="produk-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/250x150?text=Image+Error ';" />
       <h2>AKUN VALORANT</h2>
       <p class="harga">Rp75.000</p>
       <button onclick="beli('Valorant Level 30', 'Rp75.000')">Beli Sekarang</button>
     </div>
     <!-- Produk 3 -->
     <div class="produk-card" data-nama="AKUN FIFA">
-      <img src="https://via.placeholder.com/250x150?text=FIFA " alt="FIFA Coins 100k" class="produk-img" />
+      <img src="https://via.placeholder.com/250x150?text=FIFA " alt="FIFA Coins 100k" class="produk-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/250x150?text=Image+Error ';" />
       <h2>AKUN FIFA</h2>
       <p class="harga">Rp25.000</p>
       <button onclick="beli('FIFA Coins 100k', 'Rp25.000')">Beli Sekarang</button>
     </div>
     <!-- Produk 4 -->
     <div class="produk-card" data-nama="AKUN PUBG">
-      <img src="https://via.placeholder.com/250x150?text=PUBG " alt="PUBG Level 100" class="produk-img" />
+      <img src="https://via.placeholder.com/250x150?text=PUBG " alt="PUBG Level 100" class="produk-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/250x150?text=Image+Error ';" />
       <h2>AKUN PUBG</h2>
       <p class="harga">Rp100.000</p>
       <button onclick="beli('PUBG Level 100', 'Rp100.000')">Beli Sekarang</button>
