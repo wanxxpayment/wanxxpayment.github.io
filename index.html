@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Jual Akun Game Termurah</title>
 
-  <!-- Meta SEO -->
+  <!-- SEO Meta -->
   <meta name="description" content="Toko jual akun game termurah dan terpercaya. Beli akun Free Fire, MLBB, Valorant, PUBG hanya di WANXX STORE.">
   <meta property="og:title" content="WANXX STORE - Jual Akun Game Termurah">
   <meta property="og:description" content="Toko jual akun game termurah dan terpercaya. Beli akun Free Fire, MLBB, Valorant, PUBG hanya di WANXX STORE.">
@@ -20,6 +20,7 @@
       padding: 0;
       box-sizing: border-box;
     }
+
     body {
       font-family: 'Segoe UI', sans-serif;
       background-color: #f7f7f7;
@@ -39,11 +40,13 @@
       border-radius: 10px;
       margin-bottom: 20px;
     }
+
     .header-logo img {
       width: 40px;
       height: 40px;
       border-radius: 50%;
     }
+
     .header-title {
       font-size: 1.2rem;
       font-weight: 700;
@@ -66,6 +69,7 @@
       gap: 10px;
       margin-bottom: 20px;
     }
+
     .filter-buttons button {
       flex: 1 1 calc(33% - 10px);
       background: #e0e0e0;
@@ -76,6 +80,7 @@
       cursor: pointer;
       transition: all 0.3s ease;
     }
+
     .filter-buttons button.active {
       background: #00bfff;
       color: white;
@@ -88,7 +93,6 @@
       gap: 15px;
     }
 
-    /* Untuk Mobile: 2 Kolom */
     @media (max-width: 600px) {
       .produk-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -101,12 +105,7 @@
       padding: 15px;
       text-align: center;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
       position: relative;
-    }
-
-    .produk-card:hover {
-      transform: translateY(-5px);
     }
 
     .stiker {
@@ -146,7 +145,8 @@
       justify-content: space-between;
     }
 
-    .beli-btn, .detail-btn {
+    .beli-btn,
+    .detail-btn {
       background-color: #25D366;
       color: white;
       border: none;
@@ -215,17 +215,16 @@
 
   <!-- Produk Grid -->
   <div class="produk-grid" id="produkGrid">
-
     <!-- Produk FF -->
     <div class="produk-card" data-kategori="ff">
       <span class="stiker">Cepat</span>
       <img src="https://via.placeholder.com/150x100?text=Free+Fire " alt="Free Fire" class="produk-img" />
       <h3>AKUN FF</h3>
       <p class="harga">Rp50.000</p>
-      <p class="detail">Level Max | Diamond: 10.000 | Top Up</p>
+      <p class="detail">Level Max | Diamond: 10.000+</p>
       <div class="btn-group">
-        <button class="beli-btn" onclick="beli('Free Fire Level Max', 'Rp50.000')">Beli Sekarang</button>
-        <a href="/detail-ff.html" style="text-decoration: none;">
+        <button class="beli-btn" onclick="window.open('https://wa.me/628123456789?text=Saya  mau beli Free Fire Level Max')">Beli Sekarang</button>
+        <a href="detail.html?produk=Free Fire Level Max&harga=Rp50.000&deskripsi=Level Max | Diamond: 10.000+ | Bisa di-top up." style="text-decoration: none;">
           <button class="detail-btn">Lihat Detail</button>
         </a>
       </div>
@@ -239,8 +238,8 @@
       <p class="harga">Rp60.000</p>
       <p class="detail">Level 50 | Hero 50+ | Battle Pass</p>
       <div class="btn-group">
-        <button class="beli-btn" onclick="beli('MLBB Level 50', 'Rp60.000')">Beli Sekarang</button>
-        <a href="/detail-mlbb.html" style="text-decoration: none;">
+        <button class="beli-btn" onclick="window.open('https://wa.me/628123456789?text=Saya  mau beli MLBB Level 50')">Beli Sekarang</button>
+        <a href="detail.html?produk=MLBB Level 50&harga=Rp60.000&deskripsi=Hero 50+, Battle Pass Selesai, Skin 10+" style="text-decoration: none;">
           <button class="detail-btn">Lihat Detail</button>
         </a>
       </div>
@@ -254,8 +253,8 @@
       <p class="harga">Rp75.000</p>
       <p class="detail">Level 30 | Rank: Platinum | Full Skin</p>
       <div class="btn-group">
-        <button class="beli-btn" onclick="beli('Valorant Level 30', 'Rp75.000')">Beli Sekarang</button>
-        <a href="/detail-valorant.html" style="text-decoration: none;">
+        <button class="beli-btn" onclick="window.open('https://wa.me/628123456789?text=Saya  mau beli Valorant Level 30')">Beli Sekarang</button>
+        <a href="detail.html?produk=Valorant Level 30&harga=Rp75.000&deskripsi=Level 30, Rank Platinum, Full Weapon Skin" style="text-decoration: none;">
           <button class="detail-btn">Lihat Detail</button>
         </a>
       </div>
@@ -269,8 +268,8 @@
       <p class="harga">Rp100.000</p>
       <p class="detail">Level 100 | UC: 6000 | Emote Lengkap</p>
       <div class="btn-group">
-        <button class="beli-btn" onclick="beli('PUBG Level 100', 'Rp100.000')">Beli Sekarang</button>
-        <a href="/detail-pubg.html" style="text-decoration: none;">
+        <button class="beli-btn" onclick="window.open('https://wa.me/628123456789?text=Saya  mau beli PUBG Level 100')">Beli Sekarang</button>
+        <a href="detail.html?produk=PUBG Level 100&harga=Rp100.000&deskripsi=Level 100, UC 6000+, Emote Lengkap" style="text-decoration: none;">
           <button class="detail-btn">Lihat Detail</button>
         </a>
       </div>
@@ -284,13 +283,12 @@
       <p class="harga">Rp25.000</p>
       <p class="detail">Coins 100k | FUT | PS4</p>
       <div class="btn-group">
-        <button class="beli-btn" onclick="beli('FIFA Coins 100k', 'Rp25.000')">Beli Sekarang</button>
-        <a href="/detail-fifa.html" style="text-decoration: none;">
+        <button class="beli-btn" onclick="window.open('https://wa.me/628123456789?text=Saya  mau beli FIFA Coins 100k')">Beli Sekarang</button>
+        <a href="detail.html?produk=FIFA Coins 100k&harga=Rp25.000&deskripsi=Coins 100k, Platform PS4, Paket Murah" style="text-decoration: none;">
           <button class="detail-btn">Lihat Detail</button>
         </a>
       </div>
     </div>
-
   </div>
 
   <!-- Footer -->
@@ -304,14 +302,6 @@
 
   <!-- Script -->
   <script>
-    function beli(itemName, harga) {
-      const noWa = "628123456789"; // Ganti dengan nomor WA aktif kamu
-      const pesan = encodeURIComponent(`Saya mau beli ${itemName}, Harga ${harga}
-Nama: 
-No. WA: `);
-      window.open(`https://wa.me/ ${noWa}?text=${pesan}`, '_blank');
-    }
-
     function cariProduk() {
       const input = document.getElementById("searchInput").value.toLowerCase();
       const cards = document.querySelectorAll(".produk-card");
@@ -349,4 +339,4 @@ No. WA: `);
   </script>
 
 </body>
-</html
+</html>
