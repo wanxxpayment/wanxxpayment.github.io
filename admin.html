@@ -13,14 +13,14 @@
       text-align: center;
       margin-bottom: 20px;
     }
-    form {
+    .form-section {
       background: white;
       padding: 20px;
       border-radius: 10px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       margin-bottom: 30px;
     }
-    input, select, button {
+    input, textarea, select, button {
       width: 100%;
       padding: 10px;
       margin: 10px 0;
@@ -34,23 +34,25 @@
       background: white;
       border-radius: 10px;
       overflow: hidden;
+      margin-top: 20px;
     }
     th, td {
       padding: 12px;
       border-bottom: 1px solid #ddd;
       text-align: left;
     }
-    .btn-hapus {
-      background-color: #dc3545;
-      color: white;
+    .btn-hapus, .btn-edit {
       border: none;
       cursor: pointer;
+      padding: 6px 10px;
+      color: white;
+      border-radius: 5px;
+    }
+    .btn-hapus {
+      background-color: #dc3545;
     }
     .btn-edit {
       background-color: #00bfff;
-      color: white;
-      border: none;
-      cursor: pointer;
     }
   </style>
 </head>
@@ -58,13 +60,23 @@
 
 <h1>📦 Admin Panel - WANXX STORE</h1>
 
-<!-- Form Tambah Produk -->
-<form id="formProduk">
-  <input type="text" id="nama" placeholder="Nama Produk" required />
-  <input type="number" id="harga" placeholder="Harga" required />
-  <input type="text" id="deskripsi" placeholder="Deskripsi" required />
-  <input type="text" id="gambar" placeholder="URL Gambar" required />
-  <select id="kategori" required>
+<!-- Form Edit Info Toko -->
+<div class="form-section">
+  <h2>🔧 Edit Informasi Toko</h2>
+  <input type="text" id="namaToko" placeholder="Nama Toko" required />
+  <input type="text" id="logoUrl" placeholder="URL Logo Toko" required />
+  <textarea id="deskripsiToko" rows="3" placeholder="Deskripsi Toko"></textarea>
+  <button onclick="simpanInfoToko()">Simpan Info Toko</button>
+</div>
+
+<!-- Form Tambah/Edit Produk -->
+<div class="form-section">
+  <h2>🛍️ Tambah/Edit Produk</h2>
+  <input type="text" id="namaProduk" placeholder="Nama Produk" required />
+  <input type="number" id="hargaProduk" placeholder="Harga" required />
+  <input type="text" id="gambarProduk" placeholder="URL Gambar" required />
+  <input type="text" id="deskripsiProduk" placeholder="Deskripsi" required />
+  <select id="kategoriProduk" required>
     <option value="">Pilih Kategori</option>
     <option value="ff">Free Fire</option>
     <option value="mlbb">JasaPost</option>
@@ -72,99 +84,25 @@
     <option value="pubg">Top Up</option>
     <option value="fifa">FIFA</option>
   </select>
-  <button type="submit">Tambah Produk</button>
-</form>
+  <button onclick="simpanProduk()">Tambah Produk</button>
+</div>
 
 <!-- Daftar Produk -->
-<table id="tabelProduk">
-  <thead>
-    <tr>
-      <th>Nama</th>
-      <th>Harga</th>
-      <th>Kategori</th>
-      <th>Aksi</th>
-    </tr>
-  </thead>
-  <tbody></tbody>
-</table>
+<div class="form-section">
+  <h2>🗑️ Daftar Produk</h2>
+  <table id="tabelProduk">
+    <thead>
+      <tr>
+        <th>Nama</th>
+        <th>Harga</th>
+        <th>Kategori</th>
+        <th>Aksi</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
 
-<script>
-  // Simpan produk ke localStorage
-  function simpanProduk() {
-    const nama = document.getElementById("nama").value.trim();
-    const harga = document.getElementById("harga").value.trim();
-    const deskripsi = document.getElementById("deskripsi").value.trim();
-    const gambar = document.getElementById("gambar").value.trim();
-    const kategori = document.getElementById("kategori").value;
-
-    if (!nama || !harga || !deskripsi || !gambar || !kategori) return;
-
-    const produk = JSON.parse(localStorage.getItem("produk")) || [];
-
-    produk.push({ nama, harga, deskripsi, gambar, kategori });
-
-    localStorage.setItem("produk", JSON.stringify(produk));
-    muatProduk();
-    document.getElementById("formProduk").reset();
-  }
-
-  // Muat produk dari localStorage
-  function muatProduk() {
-    const tbody = document.querySelector("#tabelProduk tbody");
-    tbody.innerHTML = "";
-    const produk = JSON.parse(localStorage.getItem("produk")) || [];
-
-    produk.forEach((item, index) => {
-      const tr = document.createElement("tr");
-      tr.innerHTML = `
-        <td>${item.nama}</td>
-        <td>Rp${parseInt(item.harga).toLocaleString()}</td>
-        <td>${item.kategori}</td>
-        <td>
-          <button class="btn-edit" onclick="editProduk(${index})">Edit</button>
-          <button class="btn-hapus" onclick="hapusProduk(${index})">Hapus</button>
-        </td>
-      `;
-      tbody.appendChild(tr);
-    });
-  }
-
-  // Hapus produk
-  function hapusProduk(index) {
-    const produk = JSON.parse(localStorage.getItem("produk")) || [];
-    produk.splice(index, 1);
-    localStorage.setItem("produk", JSON.stringify(produk));
-    muatProduk();
-  }
-
-  // Edit produk
-  function editProduk(index) {
-    const produk = JSON.parse(localStorage.getItem("produk")) || [];
-    const item = produk[index];
-
-    const newNama = prompt("Nama Produk", item.nama);
-    const newHarga = prompt("Harga", item.harga);
-    const newDeskripsi = prompt("Deskripsi", item.deskripsi);
-    const newGambar = prompt("URL Gambar", item.gambar);
-    const newKategori = prompt("Kategori (ff/mlbb/valorant/pubg/fifa)", item.kategori);
-
-    if (newNama && newHarga && newDeskripsi && newGambar && newKategori) {
-      produk[index] = { nama: newNama, harga: newHarga, deskripsi: newDeskripsi, gambar: newGambar, kategori: newKategori };
-      localStorage.setItem("produk", JSON.stringify(produk));
-      muatProduk();
-    }
-  }
-
-  // Event listener
-  document.getElementById("formProduk").addEventListener("submit", function (e) {
-    e.preventDefault();
-    simpanProduk();
-  });
-
-  document.addEventListener("DOMContentLoaded", function () {
-    muatProduk();
-  });
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
