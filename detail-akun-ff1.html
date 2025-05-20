@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Detail Produk - WANXX STORE</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f7f7f7;
+      color: #333;
+      line-height: 1.6;
+      padding: 15px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #00bfff;
+      color: white;
+      padding: 10px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .header-logo img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+    }
+
+    .header-title {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #000;
+    }
+
+    .harga {
+      color: #25D366;
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin: 10px 0;
+    }
+
+    .deskripsi {
+      margin: 10px 0;
+      font-size: 0.95rem;
+      color: #444;
+    }
+
+    .gambar-produk {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .gambar-produk img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .btn-beli {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .beli-btn {
+      background-color: #25D366;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      max-width: 300px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .beli-btn:hover {
+      background-color: #20a95e;
+    }
+
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #aaa;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 15px;
+      }
+
+      .beli-btn {
+        padding: 10px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-logo">
+      <img src="https://i.ibb.co.com/67ytF0Wf/Whats-App-Image-2025-05-19-at-00-29-47-1c5ff881.jpg" alt="Logo Toko" />
+    </div>
+    <div class="header-title">WANXX STORE</div>
+  </header>
+
+  <!-- Detail Container -->
+  <div class="container">
+    <h2 id="produk-nama">Nama Produk</h2>
+    <p class="harga" id="produk-harga">Harga</p>
+    <p class="deskripsi" id="produk-deskripsi">Deskripsi lengkap produk akan muncul di sini.</p>
+
+    <!-- Gallery Gambar -->
+    <div class="gambar-produk">
+      <img src="https://preview.redd.it/my-ff-profile-v0-73swkkjd534d1.jpeg?width=1080&crop=smart&auto=webp&s=dd07514ff708ea0041eb91c58c1a9dfcdc0c053a" alt="Screenshot 1">
+      <img src="https://preview.redd.it/my-ff-profile-v0-73swkkjd534d1.jpeg?width=1080&crop=smart&auto=webp&s=dd07514ff708ea0041eb91c58c1a9dfcdc0c053a" alt="Screenshot 2">
+      <img src="https://preview.redd.it/my-ff-profile-v0-73swkkjd534d1.jpeg?width=1080&crop=smart&auto=webp&s=dd07514ff708ea0041eb91c58c1a9dfcdc0c053a" alt="Screenshot 3">
+    </div>
+
+    <!-- Tombol Beli -->
+    <div class="btn-beli">
+      <button class="beli-btn" onclick="window.open('https://wa.me/628123456789?text=Saya  ingin membeli produk ini', '_blank')">Beli Sekarang via WhatsApp</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 WANXX STORE. All rights reserved.
+  </footer>
+
+  <script>
+    // Ambil parameter dari URL
+    const urlParams = new URLSearchParams(window.location.search);
+
+    const nama = urlParams.get('produk');
+    const harga = urlParams.get('harga');
+    const deskripsi = urlParams.get('deskripsi');
+
+    document.getElementById('produk-nama').innerText = nama || "Produk Tidak Dikenali";
+    document.getElementById('produk-harga').innerText = harga || "";
+    document.getElementById('produk-deskripsi').innerText = deskripsi || "Tidak ada deskripsi tersedia.";
+  </script>
+
+</body>
+</html>
