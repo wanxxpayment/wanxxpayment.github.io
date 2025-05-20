@@ -239,6 +239,63 @@
   </p>
 </footer>
 
-<script src="script.js"></script>
+<script>
+  window.onload = function () {
+    const produk = JSON.parse(localStorage.getItem("produk")) || [];
+    const grid = document.getElementById("produkGrid");
+
+    produk.forEach(p => {
+      const card = document.createElement("div");
+      card.className = "produk-card";
+      card.setAttribute("data-kategori", p.kategori);
+      card.innerHTML = `
+        <span class="stiker">Cepat</span>
+        <img src="${p.gambar}" alt="${p.nama}" class="produk-img" />
+        <h3>${p.nama}</h3>
+        <p class="harga">Rp${parseInt(p.harga).toLocaleString()}</p>
+        <p class="detail">${p.deskripsi}</p>
+        <div class="btn-group">
+          <button class="beli-btn" onclick="window.open('https://wa.me/628123456789?text=Saya  mau beli ${encodeURIComponent(p.nama)}')">Beli Sekarang</button>
+          <a href="detail.html?produk=${encodeURIComponent(p.nama)}&harga=Rp${parseInt(p.harga).toLocaleString()}&deskripsi=${encodeURIComponent(p.deskripsi)}" style="text-decoration: none;">
+            <button class="detail-btn">Lihat Detail</button>
+          </a>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+  }
+
+  function cariProduk() {
+    const input = document.getElementById("searchInput").value.toLowerCase();
+    const cards = document.querySelectorAll(".produk-card");
+    let found = false;
+    cards.forEach(card => {
+      const title = card.querySelector("h3").innerText.toLowerCase();
+      if (title.includes(input)) {
+        card.style.display = "block";
+        found = true;
+      } else {
+        card.style.display = "none";
+      }
+    });
+    if (!found && input !== "") {
+      alert("Produk tidak ditemukan.");
+    }
+  }
+
+  function filterKategori(btn, kategori) {
+    const buttons = document.querySelectorAll(".filter-buttons button");
+    buttons.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    const cards = document.querySelectorAll(".produk-card");
+    cards.forEach(card => {
+      if (kategori === "all" || card.getAttribute("data-kategori") === kategori) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  }
+</script>
 </body>
 </html>
