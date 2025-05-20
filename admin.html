@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Panel - WANXX STORE</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f4f4;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+    .btn-hapus {
+      background-color: #dc3545;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-edit {
+      background-color: #00bfff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<h1>📦 Admin Panel - WANXX STORE</h1>
+
+<!-- Form Tambah Produk -->
+<form id="formProduk">
+  <input type="text" id="nama" placeholder="Nama Produk" required />
+  <input type="number" id="harga" placeholder="Harga" required />
+  <input type="text" id="deskripsi" placeholder="Deskripsi" required />
+  <input type="text" id="gambar" placeholder="URL Gambar" required />
+  <select id="kategori" required>
+    <option value="">Pilih Kategori</option>
+    <option value="ff">Free Fire</option>
+    <option value="mlbb">JasaPost</option>
+    <option value="valorant">Jasa Web</option>
+    <option value="pubg">Top Up</option>
+    <option value="fifa">FIFA</option>
+  </select>
+  <button type="submit">Tambah Produk</button>
+</form>
+
+<!-- Daftar Produk -->
+<table id="tabelProduk">
+  <thead>
+    <tr>
+      <th>Nama</th>
+      <th>Harga</th>
+      <th>Kategori</th>
+      <th>Aksi</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+<script src="script.js"></script>
+</body>
+</html>
