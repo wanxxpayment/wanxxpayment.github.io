@@ -63,13 +63,4 @@ function editProduk(index) {
     muatProduk();
   }
 }
-
-// Event listener
-document.getElementById("formProduk").addEventListener("submit", function (e) {
-  e.preventDefault();
-  simpanProduk();
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  muatProduk();
-});
+</script>
