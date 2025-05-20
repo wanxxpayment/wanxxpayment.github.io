@@ -241,6 +241,15 @@
 
 <script>
   window.onload = function () {
+    // Muat info toko
+    const namaToko = localStorage.getItem("toko_nama") || "WANXX STORE";
+    const logoToko = localStorage.getItem("toko_logo") || "https://i.ibb.co.com/67ytF0Wf/Whats-App-Image-2025-05-19-at-00-29-47-1c5ff881.jpg ";
+    const deskripsiToko = localStorage.getItem("toko_deskripsi") || "Toko jual akun game termurah dan terpercaya.";
+
+    document.querySelector(".header-title").innerText = namaToko;
+    document.querySelector(".header-logo img").src = logoToko;
+
+    // Muat produk
     const produk = JSON.parse(localStorage.getItem("produk")) || [];
     const grid = document.getElementById("produkGrid");
 
