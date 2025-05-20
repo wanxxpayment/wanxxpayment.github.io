@@ -1,10 +1,25 @@
-// Simpan produk ke localStorage
+// Simpan info toko
+function simpanInfoToko() {
+  const nama = document.getElementById("namaToko").value.trim();
+  const logo = document.getElementById("logoUrl").value.trim();
+  const deskripsi = document.getElementById("deskripsiToko").value.trim();
+
+  if (!nama || !logo) return;
+
+  localStorage.setItem("toko_nama", nama);
+  localStorage.setItem("toko_logo", logo);
+  localStorage.setItem("toko_deskripsi", deskripsi);
+
+  alert("Informasi toko berhasil disimpan!");
+}
+
+// Simpan produk baru
 function simpanProduk() {
-  const nama = document.getElementById("nama").value.trim();
-  const harga = document.getElementById("harga").value.trim();
-  const deskripsi = document.getElementById("deskripsi").value.trim();
-  const gambar = document.getElementById("gambar").value.trim();
-  const kategori = document.getElementById("kategori").value;
+  const nama = document.getElementById("namaProduk").value.trim();
+  const harga = document.getElementById("hargaProduk").value.trim();
+  const deskripsi = document.getElementById("deskripsiProduk").value.trim();
+  const gambar = document.getElementById("gambarProduk").value.trim();
+  const kategori = document.getElementById("kategoriProduk").value;
 
   if (!nama || !harga || !deskripsi || !gambar || !kategori) return;
 
@@ -14,10 +29,10 @@ function simpanProduk() {
 
   localStorage.setItem("produk", JSON.stringify(produk));
   muatProduk();
-  document.getElementById("formProduk").reset();
+  alert("Produk ditambahkan!");
 }
 
-// Muat produk dari localStorage
+// Muat daftar produk
 function muatProduk() {
   const tbody = document.querySelector("#tabelProduk tbody");
   tbody.innerHTML = "";
@@ -63,4 +78,7 @@ function editProduk(index) {
     muatProduk();
   }
 }
-</script>
+
+document.addEventListener("DOMContentLoaded", function () {
+  muatProduk();
+});
