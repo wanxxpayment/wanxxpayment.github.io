@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WANXX STORE | Jual Akun Game Termurah</title>
+
+  <!-- SEO Meta -->
+  <meta name="description" content="Toko jual akun game termurah dan terpercaya. Beli akun Free Fire, MLBB, Valorant, PUBG hanya di WANXX STORE.">
+  <meta property="og:title" content="WANXX STORE - Jual Akun Game Termurah">
+  <meta property="og:description" content="Toko jual akun game termurah dan terpercaya. Beli akun Free Fire, MLBB, Valorant, PUBG hanya di WANXX STORE.">
+  <meta property="og:image" content="https://via.placeholder.com/600x300?text=WANXX+STORE ">
+  <meta property="og:url" content="https://example.com ">
+  <meta property="og:type" content="website">
+
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f7f7f7;
+      color: #333;
+      line-height: 1.5;
+      padding: 15px;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #00bfff;
+      color: white;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    .header-logo img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+    .header-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    /* Navigation */
+    nav {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+    nav button {
+      background: #e0e0e0;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      flex: 1;
+      transition: all 0.3s ease;
+    }
+    nav button.active {
+      background: #009acc;
+      color: white;
+    }
+
+    /* Search Bar */
+    .search-bar input {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      font-size: 1rem;
+    }
+
+    /* Produk Grid */
+    .produk-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 15px;
+    }
+
+    @media (max-width: 768px) {
+      .produk-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 kolom di mobile */
+        justify-items: center;
+      }
+      .produk-card {
+        max-width: 150px;
+        margin: auto;
+      }
+    }
+
+    /* Card Style */
+    .produk-card {
+      background: white;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      position: relative;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+    .produk-card:hover {
+      transform: translateY(-5px);
+    }
+    .produk-card.clicked {
+      background-color: #00bfff; /* Warna saat diklik */
+    }
+    .produk-img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+    .footer-links a {
+      color: #00bfff;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="header-logo">
+    <img src="https://i.ibb.co.com/67ytF0Wf/Whats-App-Image-2025-05-19-at-00-29-47-1c5ff881.jpg " alt="Logo Toko" />
+  </div>
+  <div class="header-title">WANXX STORE</div>
+</header>
+
+<!-- Navigasi Kategori -->
+<nav>
+  <button onclick="filterKategori(this, 'game')" class="active">Game</button>
+  <button onclick="filterKategori(this, 'voucher')">Voucher</button>
+</nav>
+
+<!-- Search Bar -->
+<div class="search-bar">
+  <input type="text" placeholder="Cari akun..." id="searchInput" onkeyup="cariProduk()" />
+</div>
+
+<!-- Produk Grid -->
+<div class="produk-grid" id="produkGrid"></div>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 WANXX STORE. All rights reserved.</p>
+  <p class="footer-links">
+    <a href="/privacy-policy">Privacy Policy</a> |
+    <a href="/faq">FAQ</a>
+  </p>
+</footer>
+
+<script>
+  const semuaProduk = {
+    game: [
+      { nama: "Mobile Legends", gambar: "https://icon.nerokode.com/uploads/1745689986_680d1d8297ab3_11fc1d2513cacb293a398da66b9629d1.png", link: "/detail/game/mlbb" },
+      { nama: "Free Fire", gambar: "https://icon.nerokode.com/uploads/1747258588_68250cdc78d11_unnamed (2)_11zon.webp", link: "/detail/game/free-fire" },
+      { nama: "PUBG Mobile", gambar: "https://icon.nerokode.com/uploads/1745689986_680d1d82c25bc_91cf584d226c18ee8ddc9c28bcce60f0.webp", link: "/detail/game/pubg" },
+      { nama: "Genshin Impact", gambar: "https://icon.nerokode.com/uploads/1745689986_680d1d829fefc_20fabce74b66c51c771b12fea8653c67.webp", link: "/detail/game/genshin" },
+      { nama: "Valorant", gambar: "https://icon.nerokode.com/uploads/1745689986_680d1d827beac_7b032bf9899838efea078b5fd41ff023.webp", link: "/detail/game/valorant" },
+      { nama: "CODM", gambar: "https://icon.nerokode.com/uploads/1745689987_680d1d836ad7b_d9db4c3a3ce3514e04f3fc16d74e193c.webp", link: "/detail/game/codm" }
+    ],
+    voucher: [
+      { nama: "Google Play", gambar: "https://via.placeholder.com/150x100?text=GP+Voucher ", link: "/detail/voucher/google-play" },
+      { nama: "Steam Wallet", gambar: "https://via.placeholder.com/150x100?text=Steam ", link: "/detail/voucher/steam-wallet" },
+      { nama: "PlayStation Store", gambar: "https://via.placeholder.com/150x100?text=PSN ", link: "/detail/voucher/playstation-store" },
+      { nama: "Xbox Gift Card", gambar: "https://via.placeholder.com/150x100?text=Xbox ", link: "/detail/voucher/xbox-gift-card" },
+      { nama: "iTunes", gambar: "https://via.placeholder.com/150x100?text=iTunes ", link: "/detail/voucher/itunes" }
+    ]
+  };
+
+  function filterKategori(elem, kategori) {
+    document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active'));
+    elem.classList.add('active');
+
+    let produk = semuaProduk[kategori] || [];
+    renderProduk(produk, kategori);
+  }
+
+  function cariProduk() {
+    const query = document.getElementById("searchInput").value.toLowerCase();
+    const kategoriAktif = document.querySelector('nav button.active').innerText.toLowerCase();
+
+    let produk = semuaProduk[kategoriAktif === 'game' ? 'game' : 'voucher'];
+
+    if (!produk) return;
+
+    const hasil = produk.filter(p => p.nama.toLowerCase().includes(query));
+    renderProduk(hasil, kategoriAktif);
+  }
+
+  function renderProduk(list, kategori) {
+    const container = document.getElementById("produkGrid");
+    container.innerHTML = "";
+
+    list.forEach(p => {
+      container.innerHTML += `
+        <div class="produk-card" onclick="tampilkanDetail('${p.link}')">
+          <img src="${p.gambar}" alt="${p.nama}" class="produk-img">
+          <h3>${p.nama}</h3>
+        </div>
+      `;
+    });
+  }
+
+  function tampilkanDetail(link) {
+    // Efek warna saat diklik
+    event.target.classList.add('clicked');
+    
+    // Redirect setelah 0.3 detik (waktu transisi)
+    setTimeout(() => {
+      window.location.href = link;
+    }, 300);
+  }
+
+  // Render awal
+  renderProduk(semuaProduk.game, 'game');
+</script>
+
+</body>
+</html>
