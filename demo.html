@@ -83,15 +83,14 @@
     /* Produk Grid */
     .produk-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Auto fit kolom */
       gap: 15px;
-      overflow-x: auto; /* Scroll horizontal jika produk banyak */
-      -webkit-overflow-scrolling: touch;
+      grid-auto-flow: dense; /* Packing produk lebih rapat */
     }
 
     @media (max-width: 768px) {
       .produk-grid {
-        grid-template-columns: repeat(3, 150px); /* Fix lebar kolom di mobile */
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* 3 kolom di mobile */
         justify-items: center;
       }
       .produk-card {
@@ -181,19 +180,26 @@
 <script>
   const semuaProduk = {
     game: [
-      { nama: "Mobile Legends", gambar: "https://via.placeholder.com/150x100?text=MLBB ", link: "/detail/game/mlbb" },
-      { nama: "Free Fire", gambar: "https://via.placeholder.com/150x100?text=Free+Fire ", link: "/detail/game/free-fire" },
-      { nama: "PUBG Mobile", gambar: "https://via.placeholder.com/150x100?text=PUBG ", link: "/detail/game/pubg" },
-      { nama: "Genshin Impact", gambar: "https://via.placeholder.com/150x100?text=Genshin ", link: "/detail/game/genshin" },
-      { nama: "Valorant", gambar: "https://via.placeholder.com/150x100?text=Valorant ", link: "/detail/game/valorant" },
-      { nama: "CODM", gambar: "https://via.placeholder.com/150x100?text=CODM ", link: "/detail/game/codm" }
+      { nama: "Mobile Legends", gambar: "https://icon.nerokode.com/uploads/1745689986_680d1d8297ab3_11fc1d2513cacb293a398da66b9629d1.png", link: "/detail/game/mlbb" },
+      { nama: "Free Fire", gambar: "https://icon.nerokode.com/uploads/1747258588_68250cdc78d11_unnamed (2)_11zon.webp", link: "/detail/game/free-fire" },
+      { nama: "PUBG Mobile", gambar: "https://icon.nerokode.com/uploads/1745689986_680d1d82c25bc_91cf584d226c18ee8ddc9c28bcce60f0.webp", link: "/detail/game/pubg" },
+      { nama: "Genshin Impact", gambar: "https://icon.nerokode.com/uploads/1745689986_680d1d829fefc_20fabce74b66c51c771b12fea8653c67.webp", link: "/detail/game/genshin" },
+      { nama: "Valorant", gambar: "https://icon.nerokode.com/uploads/1745689986_680d1d827beac_7b032bf9899838efea078b5fd41ff023.webp", link: "/detail/game/valorant" },
+      { nama: "CODM", gambar: "https://icon.nerokode.com/uploads/1745689987_680d1d836ad7b_d9db4c3a3ce3514e04f3fc16d74e193c.webp", link: "/detail/game/codm" },
+      { nama: "BIGO LIVE", gambar: "https://icon.nerokode.com/uploads/1745953733_681123c5373d9_id-11134207-7r98t-lwycpm7zuqsua2.jpeg", link: "/detail/game/bigo-live" },
+      { nama: "Honor of Kings", gambar: "https://icon.nerokode.com/uploads/1745689987_680d1d83916e2_f51bf8ff68146a6210c12ee15ba04c59.png", link: "/detail/game/honor-of-kings" },
+      { nama: "Mobile Legends First Top Up", gambar: "https://via.placeholder.com/150x100?text=MLBB+Top+Up ", link: "/detail/game/mlbb-top-up" }
     ],
     voucher: [
       { nama: "Google Play", gambar: "https://via.placeholder.com/150x100?text=GP+Voucher ", link: "/detail/voucher/google-play" },
       { nama: "Steam Wallet", gambar: "https://via.placeholder.com/150x100?text=Steam ", link: "/detail/voucher/steam-wallet" },
       { nama: "PlayStation Store", gambar: "https://via.placeholder.com/150x100?text=PSN ", link: "/detail/voucher/playstation-store" },
       { nama: "Xbox Gift Card", gambar: "https://via.placeholder.com/150x100?text=Xbox ", link: "/detail/voucher/xbox-gift-card" },
-      { nama: "iTunes", gambar: "https://via.placeholder.com/150x100?text=iTunes ", link: "/detail/voucher/itunes" }
+      { nama: "iTunes", gambar: "https://via.placeholder.com/150x100?text=iTunes ", link: "/detail/voucher/itunes" },
+      { nama: "Lapakgaming Coins Rewards", gambar: "https://via.placeholder.com/150x100?text=Lapakgaming ", link: "/detail/voucher/lapakgaming-coins" },
+      { nama: "Double Diamond on First Recharge", gambar: "https://via.placeholder.com/150x100?text=Double+Diamond ", link: "/detail/voucher/double-diamond" },
+      { nama: "Banjir 1 Milyar Cashback", gambar: "https://via.placeholder.com/150x100?text=Cashback ", link: "/detail/voucher/cashback" },
+      { nama: "Steam Wallet Code", gambar: "https://via.placeholder.com/150x100?text=Steam+Wallet ", link: "/detail/voucher/steam-wallet-code" }
     ]
   };
 
