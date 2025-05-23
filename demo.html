@@ -26,6 +26,7 @@
       color: #333;
       line-height: 1.5;
       padding: 15px;
+      overflow-y: hidden; /* Hindari scroll vertikal */
     }
 
     /* Header */
@@ -52,13 +53,14 @@
     /* Navigation */
     nav {
       display: flex;
-      gap: 15px;
+      justify-content: space-between;
+      gap: 10px;
       margin-bottom: 20px;
     }
     nav button {
       background: #e0e0e0;
       border: none;
-      padding: 10px 15px;
+      padding: 10px;
       border-radius: 8px;
       font-weight: bold;
       cursor: pointer;
@@ -80,53 +82,34 @@
       font-size: 1rem;
     }
 
-    /* Produk Grid */
+    /* Produk Grid - 3 Kolom (Mobile), Tidak Boleh Scroll */
     .produk-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 15px;
-      overflow-y: auto; /* Scroll vertikal jika produk banyak */
-      max-height: calc(100vh - 400px); /* Batasi tinggi konten agar tidak overflows */
-    }
-
-    @media (max-width: 768px) {
-      .produk-grid {
-        grid-template-columns: repeat(3, 150px); /* Fix 3 kolom di mobile */
-        justify-items: center;
-      }
-      .produk-card {
-        max-width: 150px;
-        margin: auto;
-        height: 200px; /* Tetapkan tinggi maksimal agar layout tetap rapi */
-      }
-      .produk-img {
-        height: 100px; /* Tetapkan tinggi gambar agar konsisten */
-        object-fit: cover; /* Gambar akan menutupi kotak secara proporsional */
-      }
+      max-height: calc(100vh - 320px); /* Pastikan tidak overflow */
+      overflow: hidden; /* Tidak boleh scroll */
     }
 
     /* Card Style */
     .produk-card {
       background: white;
       border-radius: 10px;
-      padding: 15px;
+      padding: 10px;
       text-align: center;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      position: relative;
-      transition: transform 0.3s ease, background-color 0.3s ease;
-      overflow: hidden; /* Hindari konten keluar dari batas */
-    }
-    .produk-card:hover {
-      transform: translateY(-5px);
-    }
-    .produk-card.clicked {
-      background-color: #00bfff; /* Warna saat diklik */
+      height: 150px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
     .produk-img {
       width: 100%;
-      height: auto;
+      height: 80px;
+      object-fit: cover;
       border-radius: 8px;
-      margin-bottom: 10px;
+      margin-bottom: 6px;
     }
 
     footer {
@@ -184,49 +167,30 @@
       { nama: "Mobile Legends", gambar: "https://via.placeholder.com/150x100?text=MLBB ", link: "/detail/game/mlbb" },
       { nama: "Free Fire", gambar: "https://via.placeholder.com/150x100?text=Free+Fire ", link: "/detail/game/free-fire" },
       { nama: "PUBG Mobile", gambar: "https://via.placeholder.com/150x100?text=PUBG ", link: "/detail/game/pubg" },
-      { nama: "Genshin Impact", gambar: "https://via.placeholder.com/150x100?text=Genshin ", link: "/detail/game/genshin" },
       { nama: "Valorant", gambar: "https://via.placeholder.com/150x100?text=Valorant ", link: "/detail/game/valorant" },
       { nama: "CODM", gambar: "https://via.placeholder.com/150x100?text=CODM ", link: "/detail/game/codm" },
-      { nama: "BIGO LIVE", gambar: "https://via.placeholder.com/150x100?text=BIGO+LIVE ", link: "/detail/game/bigo-live" },
-      { nama: "Honor of Kings", gambar: "https://via.placeholder.com/150x100?text=Honor+of+Kings ", link: "/detail/game/honor-of-kings" },
-      { nama: "Mobile Legends First Top Up", gambar: "https://via.placeholder.com/150x100?text=MLBB+Top+Up ", link: "/detail/game/mlbb-top-up" },
-      { nama: "Genshin Impact", gambar: "https://via.placeholder.com/150x100?text=Genshin ", link: "/detail/game/genshin" },
-      { nama: "Valorant", gambar: "https://via.placeholder.com/150x100?text=Valorant ", link: "/detail/game/valorant" },
-      { nama: "CODM", gambar: "https://via.placeholder.com/150x100?text=CODM ", link: "/detail/game/codm" }
+      { nama: "Genshin Impact", gambar: "https://via.placeholder.com/150x100?text=Genshin ", link: "/detail/game/genshin" }
     ],
     voucher: [
-      { nama: "Google Play", gambar: "https://via.placeholder.com/150x100?text=GP+Voucher ", link: "/detail/voucher/google-play" },
+      { nama: "Google Play", gambar: "https://via.placeholder.com/150x100?text=GP ", link: "/detail/voucher/google-play" },
       { nama: "Steam Wallet", gambar: "https://via.placeholder.com/150x100?text=Steam ", link: "/detail/voucher/steam-wallet" },
-      { nama: "PlayStation Store", gambar: "https://via.placeholder.com/150x100?text=PSN ", link: "/detail/voucher/playstation-store" },
-      { nama: "Xbox Gift Card", gambar: "https://via.placeholder.com/150x100?text=Xbox ", link: "/detail/voucher/xbox-gift-card" },
       { nama: "iTunes", gambar: "https://via.placeholder.com/150x100?text=iTunes ", link: "/detail/voucher/itunes" },
-      { nama: "Lapakgaming Coins Rewards", gambar: "https://via.placeholder.com/150x100?text=Lapakgaming ", link: "/detail/voucher/lapakgaming-coins" },
-      { nama: "Double Diamond on First Recharge", gambar: "https://via.placeholder.com/150x100?text=Double+Diamond ", link: "/detail/voucher/double-diamond" },
-      { nama: "Banjir 1 Milyar Cashback", gambar: "https://via.placeholder.com/150x100?text=Cashback ", link: "/detail/voucher/cashback" },
-      { nama: "Steam Wallet Code", gambar: "https://via.placeholder.com/150x100?text=Steam+Wallet ", link: "/detail/voucher/steam-wallet-code" },
-      { nama: "Google Play", gambar: "https://via.placeholder.com/150x100?text=GP+Voucher ", link: "/detail/voucher/google-play" },
-      { nama: "Steam Wallet", gambar: "https://via.placeholder.com/150x100?text=Steam ", link: "/detail/voucher/steam-wallet" },
-      { nama: "PlayStation Store", gambar: "https://via.placeholder.com/150x100?text=PSN ", link: "/detail/voucher/playstation-store" }
+      { nama: "PlayStation Store", gambar: "https://via.placeholder.com/150x100?text=PSN ", link: "/detail/voucher/psn" },
+      { nama: "Xbox Gift Card", gambar: "https://via.placeholder.com/150x100?text=Xbox ", link: "/detail/voucher/xbox" }
     ]
   };
 
   function filterKategori(elem, kategori) {
     document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active'));
     elem.classList.add('active');
-
-    let produk = semuaProduk[kategori] || [];
-    renderProduk(produk, kategori);
+    renderProduk(semuaProduk[kategori] || [], kategori);
   }
 
   function cariProduk() {
     const query = document.getElementById("searchInput").value.toLowerCase();
     const kategoriAktif = document.querySelector('nav button.active').innerText.toLowerCase();
 
-    let produk = semuaProduk[kategoriAktif === 'game' ? 'game' : 'voucher'];
-
-    if (!produk) return;
-
-    const hasil = produk.filter(p => p.nama.toLowerCase().includes(query));
+    const hasil = semuaProduk[kategoriAktif].filter(p => p.nama.toLowerCase().includes(query));
     renderProduk(hasil, kategoriAktif);
   }
 
@@ -234,28 +198,23 @@
     const container = document.getElementById("produkGrid");
     container.innerHTML = "";
 
-    list.forEach(p => {
+    // Hanya tampilkan maksimal 6 produk agar tidak scroll
+    list.slice(0, 6).forEach(p => {
       container.innerHTML += `
         <div class="produk-card" onclick="tampilkanDetail('${p.link}')">
           <img src="${p.gambar}" alt="${p.nama}" class="produk-img">
-          <h3>${p.nama}</h3>
+          <h3 style="font-size: 0.85rem;">${p.nama}</h3>
         </div>
       `;
     });
   }
 
   function tampilkanDetail(link) {
-    // Efek warna saat diklik
-    event.target.classList.add('clicked');
-    
-    // Redirect setelah 0.3 detik (waktu transisi)
-    setTimeout(() => {
-      window.location.href = link;
-    }, 300);
+    window.location.href = link;
   }
 
-  // Render awal
-  renderProduk(semuaProduk.game, 'game');
+  // Render awal (hanya tampilkan 6 produk)
+  renderProduk(semuaProduk.game.slice(0, 6), 'game');
 </script>
 
 </body>
