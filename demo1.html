@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Detail Akun Game</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f7f7f7;
+      color: #333;
+      padding: 15px;
+    }
+
+    .container {
+      max-width: 420px;
+      margin: auto;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+    }
+
+    /* Carousel Container */
+    .carousel-container {
+      position: relative;
+      width: 100%;
+      height: 220px;
+      overflow: hidden;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .carousel-slide {
+      display: flex;
+      transition: transform 0.3s ease-in-out;
+      width: 100%;
+      height: 100%;
+    }
+
+    .carousel-slide img {
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      flex-shrink: 0;
+      border-radius: 10px;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 2;
+      font-size: 1.2rem;
+      border-radius: 50%;
+    }
+
+    .arrow.left {
+      left: 10px;
+    }
+
+    .arrow.right {
+      right: 10px;
+    }
+
+    h2 {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .price {
+      font-size: 1.2rem;
+      color: #e74c3c;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    p {
+      margin-bottom: 15px;
+      line-height: 1.5;
+      font-size: 0.95rem;
+    }
+
+    /* Tombol Chat & Beli */
+    .action-buttons {
+      position: fixed;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+      z-index: 1000;
+    }
+
+    .btn-chat,
+    .btn-buy {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      font-weight: bold;
+      color: white;
+      transition: background 0.3s ease;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .btn-chat {
+      background-color: #2563eb;
+    }
+
+    .btn-chat:hover {
+      background-color: #1d4ed8;
+    }
+
+    .btn-buy {
+      background-color: #10b981;
+    }
+
+    .btn-buy:hover {
+      background-color: #059669;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Carousel Gambar -->
+    <div class="carousel-container">
+      <div class="carousel-slide" id="carouselSlide">
+        <!-- Gambar akan diisi oleh JS -->
+      </div>
+      <button class="arrow left" onclick="prevImage()">❮</button>
+      <button class="arrow right" onclick="nextImage()">❯</button>
+    </div>
+
+    <!-- Judul Akun -->
+    <h2 id="productTitle">Akun FF Level 70 + Diamond</h2>
+
+    <!-- Harga -->
+    <p class="price" id="productPrice">Rp250.000</p>
+
+    <!-- Deskripsi -->
+    <p>
+      Ini adalah akun Free Fire level 70 lengkap dengan banyak diamond.
+      Akun ini siap pakai tanpa hackback.
+    </p>
+
+  </div>
+
+  <!-- Tombol Aksi -->
+  <div class="action-buttons">
+    <button class="btn-chat" onclick="window.open('https://wa.me/628123456789 ')">💬 Chat Admin</button>
+    <button class="btn-buy" onclick="window.open('https://tokopedia.com/detail-akun-ff ')">🛒 Beli Sekarang</button>
+  </div>
+
+  <script>
+    const images = [
+      "https://via.placeholder.com/600x300?text=Gambar+1 ",
+      "https://via.placeholder.com/600x300?text=Gambar+2 ",
+      "https://via.placeholder.com/600x300?text=Gambar+3 "
+    ];
+
+    let currentIndex = 0;
+
+    const carouselSlide = document.getElementById("carouselSlide");
+
+    function createImages() {
+      images.forEach((src) => {
+        const img = document.createElement("img");
+        img.src = src;
+        img.alt = "Gambar Akun";
+        carouselSlide.appendChild(img);
+      });
+    }
+
+    function updateCarousel() {
+      carouselSlide.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    function nextImage() {
+      if (currentIndex < images.length - 1) {
+        currentIndex++;
+        updateCarousel();
+      }
+    }
+
+    function prevImage() {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateCarousel();
+      }
+    }
+
+    // Inisialisasi
+    createImages();
+    updateCarousel();
+  </script>
+
+</body>
+</html>
