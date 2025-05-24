@@ -13,9 +13,6 @@
   <meta property="og:url" content="https://example.com ">
   <meta property="og:type" content="website">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron :wght@500&display=swap" rel="stylesheet">
-
   <style>
     /* Reset */
     * {
@@ -51,7 +48,7 @@
 
     .header-title {
       font-size: 1.5rem;
-      font-family: 'Orbitron', sans-serif;
+      font-weight: bold;
       color: white;
     }
 
@@ -109,6 +106,10 @@
       position: relative;
       transition: transform 0.3s ease;
       cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 250px;
     }
 
     .produk-card:hover {
@@ -135,10 +136,23 @@
       margin-bottom: 10px;
     }
 
+    h3 {
+      font-size: 1rem;
+      font-weight: bold;
+      color: #333;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      min-height: 3em;
+      margin-bottom: 10px;
+    }
+
     .harga {
       color: #ff5722;
       font-weight: bold;
-      margin: 10px 0;
+      margin-top: auto;
       font-size: 1.1rem;
     }
 
@@ -174,16 +188,17 @@
       }
       .produk-card {
         padding: 10px;
+        height: 220px;
       }
       .produk-img {
         height: 80px;
         object-fit: cover;
       }
+      h3 {
+        font-size: 0.9rem;
+      }
       .harga {
         font-size: 1rem;
-      }
-      .header-title {
-        font-size: 1.2rem;
       }
     }
   </style>
@@ -232,59 +247,59 @@
     {
       nama: "Akun FF Level 70 + Diamond",
       harga: "250000",
-      gambar: "https://i.imgur.com/3wJqZmH.png ",
+      gambar: "https://pedomanrakyat.co.id/wp-content/uploads/2025/01/Akun-FF-Sultan-Gratis.jpg",
       kategori: "ff"
     },
     {
-      nama: "Akun MLBB Rank Mythic",
+      nama: "Akun MLBB Rank Mythic Skin Epic",
       harga: "180000",
-      gambar: "https://i.imgur.com/gjvQYtL.png ",
+      gambar: "https://pedomanrakyat.co.id/wp-content/uploads/2025/01/Akun-FF-Sultan-Gratis.jpg",
       kategori: "mlbb"
     },
     {
-      nama: "Valorant Akun Full Skins",
+      nama: "Valorant Full Skins Rank Radiant",
       harga: "450000",
-      gambar: "https://i.imgur.com/6ZUOeXN.png ",
+      gambar: "https://pedomanrakyat.co.id/wp-content/uploads/2025/01/Akun-FF-Sultan-Gratis.jpg",
       kategori: "valorant"
     },
     {
-      nama: "Top Up PUBG UC 1200",
+      nama: "Top Up PUBG UC 1200 Murah",
       harga: "180000",
-      gambar: "https://i.imgur.com/PBzYy0r.png ",
+      gambar: "https://pedomanrakyat.co.id/wp-content/uploads/2025/01/Akun-FF-Sultan-Gratis.jpg",
       kategori: "pubg"
     },
     {
-      nama: "Diamond Free Fire 1000",
+      nama: "Diamond Free Fire Banyak 1000 pcs",
       harga: "90000",
       gambar: "https://i.imgur.com/3wJqZmH.png ",
       kategori: "ff"
     },
     {
-      nama: "Akun MLBB Battle Pass",
+      nama: "Akun MLBB Battle Pass Siap Pakai",
       harga: "60000",
       gambar: "https://i.imgur.com/gjvQYtL.png ",
       kategori: "mlbb"
     },
     {
-      nama: "Valorant RP 1200",
+      nama: "Skin Senjata Valorant Lengkap",
       harga: "150000",
       gambar: "https://i.imgur.com/6ZUOeXN.png ",
       kategori: "valorant"
     },
     {
-      nama: "UC PUBG 1000",
+      nama: "UC PUBG Top Up Cepat 1000",
       harga: "150000",
       gambar: "https://i.imgur.com/PBzYy0r.png ",
       kategori: "pubg"
     },
     {
-      nama: "Akun FF VIP Skin",
+      nama: "Akun FF VIP Skin Level 40",
       harga: "120000",
       gambar: "https://i.imgur.com/3wJqZmH.png ",
       kategori: "ff"
     },
     {
-      nama: "Akun MLBB Lengkap Hero",
+      nama: "Akun MLBB Hero Lengkap Rank Epic",
       harga: "100000",
       gambar: "https://i.imgur.com/gjvQYtL.png ",
       kategori: "mlbb"
