@@ -13,66 +13,43 @@
   <meta property="og:url" content="https://example.com ">
   <meta property="og:type" content="website">
 
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron :wght@500&display=swap" rel="stylesheet">
+
   <style>
-    /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: #f7f7f7;
-      color: #333;
-      line-height: 1.5;
+      background-color: #0d0d0d;
+      color: #fff;
+      line-height: 1.6;
       padding: 15px;
-      overflow-y: hidden; /* Hindari scroll vertikal */
     }
 
-    /* Header */
     header {
       display: flex;
       align-items: center;
-      gap: 10px;
-      background: #00bfff;
-      color: white;
-      padding: 15px;
+      gap: 15px;
+      background: #1a1a1a;
+      padding: 20px;
       border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 255, 255, 0.2);
       margin-bottom: 20px;
     }
+
     .header-logo img {
-      width: 40px;
-      height: 40px;
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
+      border: 2px solid #00ffff;
     }
+
     .header-title {
-      font-size: 1.2rem;
-      font-weight: 700;
+      font-size: 1.5rem;
+      font-family: 'Orbitron', sans-serif;
+      color: #00ffff;
     }
 
-    /* Navigation */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-    nav button {
-      background: #e0e0e0;
-      border: none;
-      padding: 10px;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
-      flex: 1;
-      transition: all 0.3s ease;
-    }
-    nav button.active {
-      background: #009acc;
-      color: white;
-    }
-
-    /* Search Bar */
     .search-bar input {
       width: 100%;
       padding: 12px;
@@ -80,51 +57,148 @@
       border-radius: 8px;
       margin-bottom: 20px;
       font-size: 1rem;
+      outline: none;
     }
 
-    /* Produk Grid - 3 Kolom (Mobile), Tidak Boleh Scroll */
+    .filter-buttons {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 10px;
+      margin-bottom: 20px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 10px;
+    }
+
+    .filter-buttons button {
+      min-width: 90px;
+      background: #222;
+      color: white;
+      border: 1px solid #00ffff;
+      padding: 10px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+
+    .filter-buttons button.active {
+      background: #00ffff;
+      color: #000;
+    }
+
     .produk-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
-      max-height: calc(100vh - 320px); /* Pastikan tidak overflow */
-      overflow: hidden; /* Tidak boleh scroll */
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 20px;
     }
 
-    /* Card Style */
     .produk-card {
-      background: white;
+      background: #1a1a1a;
       border-radius: 10px;
-      padding: 10px;
+      padding: 15px;
       text-align: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      height: 150px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      box-shadow: 0 2px 10px rgba(0, 255, 255, 0.2);
+      position: relative;
+      transition: transform 0.3s ease;
+      border: 1px solid #333;
     }
+
+    .produk-card:hover {
+      transform: translateY(-5px);
+      border-color: #00ffff;
+    }
+
+    .stiker {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: #ff9900;
+      color: white;
+      font-size: 0.7rem;
+      padding: 4px 8px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
     .produk-img {
       width: 100%;
-      height: 80px;
+      height: 100px;
       object-fit: cover;
       border-radius: 8px;
-      margin-bottom: 6px;
+      margin-bottom: 10px;
+    }
+
+    .harga {
+      color: #00ffcc;
+      font-weight: bold;
+      margin: 10px 0;
+      font-size: 1.1rem;
+    }
+
+    .detail {
+      font-size: 0.85rem;
+      color: #aaa;
+      margin: 5px 0 10px;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 10px;
+      justify-content: space-between;
+    }
+
+    .beli-btn,
+    .detail-btn {
+      background-color: #00ffcc;
+      color: #000;
+      border: none;
+      padding: 10px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      flex: 1;
+      transition: background 0.3s ease;
+    }
+
+    .detail-btn {
+      background-color: #00bfff;
+      color: white;
+    }
+
+    .beli-btn:hover {
+      background-color: #00cca3;
+    }
+
+    .detail-btn:hover {
+      background-color: #009acc;
     }
 
     footer {
       text-align: center;
       margin-top: 40px;
       font-size: 0.9rem;
-      color: #aaa;
+      color: #666;
     }
+
     .footer-links a {
-      color: #00bfff;
+      color: #00ffff;
       text-decoration: none;
       margin: 0 5px;
     }
+
     .footer-links a:hover {
       text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .produk-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .header-title {
+        font-size: 1.2rem;
+      }
     }
   </style>
 </head>
@@ -138,19 +212,24 @@
   <div class="header-title">WANXX STORE</div>
 </header>
 
-<!-- Navigasi Kategori -->
-<nav>
-  <button onclick="filterKategori(this, 'game')" class="active">Game</button>
-  <button onclick="filterKategori(this, 'voucher')">Voucher</button>
-</nav>
-
 <!-- Search Bar -->
 <div class="search-bar">
-  <input type="text" placeholder="Cari akun..." id="searchInput" onkeyup="cariProduk()" />
+  <input type="text" placeholder="Cari akun..." id="searchInput" onkeyup="cariProduk()" aria-label="Cari produk" />
+</div>
+
+<!-- Filter Buttons -->
+<div class="filter-buttons" role="group" aria-label="Filter kategori">
+  <button onclick="filterKategori(this, 'all')" class="active">Semua</button>
+  <button onclick="filterKategori(this, 'ff')">Free Fire</button>
+  <button onclick="filterKategori(this, 'mlbb')">Mobile Legends</button>
+  <button onclick="filterKategori(this, 'valorant')">Valorant</button>
+  <button onclick="filterKategori(this, 'pubg')">PUBG</button>
 </div>
 
 <!-- Produk Grid -->
-<div class="produk-grid" id="produkGrid"></div>
+<main>
+  <div class="produk-grid" id="produkGrid"></div>
+</main>
 
 <!-- Footer -->
 <footer>
@@ -162,59 +241,136 @@
 </footer>
 
 <script>
-  const semuaProduk = {
-    game: [
-      { nama: "Mobile Legends", gambar: "https://icon.nerokode.com/uploads/1745689986_680d1d8297ab3_11fc1d2513cacb293a398da66b9629d1.png", link: "/detail/game/mlbb" },
-      { nama: "Free Fire", gambar: "https://icon.nerokode.com/uploads/1745689987_680d1d833b5d4_a3a75bebf4c7752a9147c835ba25438a.png", link: "/detail/game/free-fire" },
-      { nama: "PUBG Mobile", gambar: "https://icon.nerokode.com/uploads/1745689986_680d1d82c25bc_91cf584d226c18ee8ddc9c28bcce60f0.webp", link: "/detail/game/pubg" },
-      { nama: "Valorant", gambar: "https://icon.nerokode.com/uploads/1745689986_680d1d827beac_7b032bf9899838efea078b5fd41ff023.webp", link: "/detail/game/valorant" },
-      { nama: "CODM", gambar: "https://icon.nerokode.com/uploads/1745689987_680d1d836ad7b_d9db4c3a3ce3514e04f3fc16d74e193c.webp", link: "/detail/game/codm" },
-      { nama: "Genshin Impact", gambar: "https://icon.nerokode.com/uploads/1745689986_680d1d829fefc_20fabce74b66c51c771b12fea8653c67.webp", link: "/detail/game/genshin" }
-    ],
-    voucher: [
-      { nama: "Google Play", gambar: "https://via.placeholder.com/150x100?text=GP ", link: "/detail/voucher/google-play" },
-      { nama: "Steam Wallet", gambar: "https://via.placeholder.com/150x100?text=Steam ", link: "/detail/voucher/steam-wallet" },
-      { nama: "iTunes", gambar: "https://via.placeholder.com/150x100?text=iTunes ", link: "/detail/voucher/itunes" },
-      { nama: "PlayStation Store", gambar: "https://via.placeholder.com/150x100?text=PSN ", link: "/detail/voucher/psn" },
-      { nama: "Xbox Gift Card", gambar: "https://via.placeholder.com/150x100?text=Xbox ", link: "/detail/voucher/xbox" }
-    ]
-  };
+  // Produk Hardcoded
+  const defaultProduk = [
+    {
+      nama: "Akun FF Level 70 + Diamond",
+      harga: "250000",
+      deskripsi: "Level 70, banyak diamond dan skin karakter.",
+      gambar: "https://pedomanrakyat.co.id/wp-content/uploads/2025/01/Akun-FF-Sultan-Gratis.jpg",
+      kategori: "ff"
+    },
+    {
+      nama: "Akun MLBB Rank Mythic",
+      harga: "180000",
+      deskripsi: "Rank Mythic dengan banyak skin hero populer.",
+      gambar: "https://i.imgur.com/gjvQYtL.png ",
+      kategori: "mlbb"
+    },
+    {
+      nama: "Valorant Akun Full Skins",
+      harga: "450000",
+      deskripsi: "Rank Radiant lengkap dengan semua senjata ber-skin.",
+      gambar: "https://i.imgur.com/6ZUOeXN.png ",
+      kategori: "valorant"
+    },
+    {
+      nama: "Top Up PUBG UC 1200",
+      harga: "180000",
+      deskripsi: "Top up UC PUBG sebesar 1200 dengan harga murah!",
+      gambar: "https://i.imgur.com/PBzYy0r.png ",
+      kategori: "pubg"
+    },
+    {
+      nama: "Diamond Free Fire 1000",
+      harga: "90000",
+      deskripsi: "Diamond Free Fire 1000 pcs, langsung masuk akun.",
+      gambar: "https://i.imgur.com/3wJqZmH.png ",
+      kategori: "ff"
+    },
+    {
+      nama: "Akun MLBB Battle Pass",
+      harga: "60000",
+      deskripsi: "Battle Pass siap pakai tanpa harus grinding.",
+      gambar: "https://i.imgur.com/gjvQYtL.png ",
+      kategori: "mlbb"
+    },
+    {
+      nama: "Valorant RP 1200",
+      harga: "150000",
+      deskripsi: "RP Valorant 1200 untuk beli skin eksklusif.",
+      gambar: "https://i.imgur.com/6ZUOeXN.png ",
+      kategori: "valorant"
+    },
+    {
+      nama: "UC PUBG 1000",
+      harga: "150000",
+      deskripsi: "Top up UC PUBG 1000 hanya dengan 150 ribu.",
+      gambar: "https://i.imgur.com/PBzYy0r.png ",
+      kategori: "pubg"
+    },
+    {
+      nama: "Akun FF VIP Skin",
+      harga: "120000",
+      deskripsi: "Akun Free Fire dengan skin VIP dan level 40.",
+      gambar: "https://i.imgur.com/3wJqZmH.png ",
+      kategori: "ff"
+    },
+    {
+      nama: "Akun MLBB Lengkap Hero",
+      harga: "100000",
+      deskripsi: "Semua hero tersedia, rank epic, battle pass aktif.",
+      gambar: "https://i.imgur.com/gjvQYtL.png ",
+      kategori: "mlbb"
+    }
+  ];
 
-  function filterKategori(elem, kategori) {
-    document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active'));
-    elem.classList.add('active');
-    renderProduk(semuaProduk[kategori] || [], kategori);
-  }
+  document.addEventListener("DOMContentLoaded", () => {
+    muatProduk();
+  });
 
-  function cariProduk() {
-    const query = document.getElementById("searchInput").value.toLowerCase();
-    const kategoriAktif = document.querySelector('nav button.active').innerText.toLowerCase();
+  function muatProduk() {
+    const grid = document.getElementById("produkGrid");
+    grid.innerHTML = "";
 
-    const hasil = semuaProduk[kategoriAktif].filter(p => p.nama.toLowerCase().includes(query));
-    renderProduk(hasil, kategoriAktif);
-  }
-
-  function renderProduk(list, kategori) {
-    const container = document.getElementById("produkGrid");
-    container.innerHTML = "";
-
-    // Hanya tampilkan maksimal 6 produk agar tidak scroll
-    list.slice(0, 6).forEach(p => {
-      container.innerHTML += `
-        <div class="produk-card" onclick="tampilkanDetail('${p.link}')">
-          <img src="${p.gambar}" alt="${p.nama}" class="produk-img">
-          <h3 style="font-size: 0.85rem;">${p.nama}</h3>
+    defaultProduk.forEach(p => {
+      const card = document.createElement("div");
+      card.className = "produk-card";
+      card.setAttribute("data-kategori", p.kategori);
+      card.innerHTML = `
+        <span class="stiker">🔥 POPULER</span>
+        <img src="${p.gambar}" alt="${p.nama}" class="produk-img" />
+        <h3>${p.nama}</h3>
+        <p class="harga">Rp${parseInt(p.harga).toLocaleString()}</p>
+        <p class="detail">${p.deskripsi}</p>
+        <div class="btn-group">
+          <button class="beli-btn" onclick="window.open('https://wa.me/628123456789?text=Saya  mau beli ${encodeURIComponent(p.nama)}')">Beli Sekarang</button>
+          <a href="detail.html?produk=${encodeURIComponent(p.nama)}&harga=Rp${parseInt(p.harga).toLocaleString()}&deskripsi=${encodeURIComponent(p.deskripsi)}" style="text-decoration: none;">
+            <button class="detail-btn">Lihat Detail</button>
+          </a>
         </div>
       `;
+      grid.appendChild(card);
     });
   }
 
-  function tampilkanDetail(link) {
-    window.location.href = link;
+  function cariProduk() {
+    const input = document.getElementById("searchInput").value.toLowerCase();
+    const cards = document.querySelectorAll(".produk-card");
+    let found = false;
+
+    cards.forEach(card => {
+      const title = card.querySelector("h3").innerText.toLowerCase();
+      card.style.display = title.includes(input) ? "block" : "none";
+      if (title.includes(input)) found = true;
+    });
+
+    if (!found && input !== "") {
+      alert("Produk tidak ditemukan.");
+    }
   }
 
-  // Render awal (hanya tampilkan 6 produk)
-  renderProduk(semuaProduk.game.slice(0, 6), 'game');
+  function filterKategori(btn, kategori) {
+    const buttons = document.querySelectorAll(".filter-buttons button");
+    buttons.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    const cards = document.querySelectorAll(".produk-card");
+    cards.forEach(card => {
+      const display = (kategori === "all" || card.getAttribute("data-kategori") === kategori) ? "block" : "none";
+      card.style.display = display;
+    });
+  }
 </script>
 
 </body>
