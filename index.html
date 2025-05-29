@@ -3,328 +3,101 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>WANXX GAMES | Jual Akun Game Termurah</title>
-
-  <!-- SEO Meta -->
-  <meta name="description" content="Wanxx Games jual akun game termurah dan terpercaya. Beli akun Free Fire, hanya di WANXX GAMES.">
-  <meta property="og:title" content="WANXX GAMES - Jual Akun Game Termurah">
-  <meta property="og:description" content="Toko jual akun game termurah dan Bergeransi hanya di WANXX GAMES.">
-  <meta property="og:image" content="https://i.ibb.co.com/Pv7XSkxV/photo-2025-05-28-10-24-09-removebg-preview.png">
-  <meta property="og:url" content="https://example.com ">
-  <meta property="og:type" content="website">
-
-  <!-- CSS -->
+  <title>Download Aplikasi</title>
   <style>
-    /* Reset */
+    /* Reset & Base */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f8f9fa;
-      color: #333;
-      line-height: 1.6;
-      padding: 15px;
     }
 
-    /* Header */
-    header {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      background: #0d6efd;
-      color: white;
-      padding: 20px;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
-    .header-logo img {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      border: 2px solid white;
-    }
-    .header-title {
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-
-    /* Search Bar */
-    .search-bar input {
+    body, html {
       width: 100%;
-      padding: 12px;
-      border: none;
-      border-radius: 8px;
-      margin-bottom: 20px;
-      font-size: 1rem;
-      outline: none;
-      background-color: #e9ecef;
-      color: #333;
-      border: 1px solid #0d6efd;
-    }
-
-    /* Filter Buttons */
-    .filter-buttons {
-      display: flex;
-      flex-wrap: nowrap;
-      gap: 10px;
-      margin-bottom: 20px;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      padding-bottom: 10px;
-    }
-    .filter-buttons button {
-      min-width: 90px;
-      background: #e9ecef;
-      color: #0d6efd;
-      border: 1px solid #0d6efd;
-      padding: 10px 12px;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      font-weight: bold;
-      flex-shrink: 0;
-      font-size: 0.85rem;
-    }
-    .filter-buttons button.active {
-      background: #0d6efd;
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #0000ff, #2a5298);
       color: white;
+      overflow-x: hidden;
     }
 
-    /* Produk Grid */
-    .produk-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 20px;
-    }
-    .produk-card {
-      background: white;
-      border-radius: 10px;
-      padding: 15px;
-      text-align: center;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      position: relative;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    .container {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      height: 250px;
-      border: 1px solid #dee2e6;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 100vh;
+      padding: 20px;
     }
-    .produk-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 15px rgba(13, 112, 255, 0.3);
-    }
-    .produk-img {
-      width: 100%;
+
+    .logo {
+      width: 100px;
       height: 100px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-bottom: 10px;
-      border: 1px solid #dee2e6;
+      margin-bottom: 20px;
+      animation: bounce 2s infinite;
     }
-    h3 {
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1rem;
+      max-width: 400px;
+      margin-bottom: 30px;
+      opacity: 0.9;
+    }
+
+    .download-btn {
+      display: inline-block;
+      padding: 15px 30px;
       font-size: 1rem;
       font-weight: bold;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      min-height: 3em;
-      margin-bottom: 10px;
-      color: #212529;
-    }
-    .harga {
-      color: #0d6efd;
-      font-weight: bold;
-      margin-top: auto;
-      font-size: 1.1rem;
-    }
-    .anti-hackback {
-      background-color: #f1f3f5;
-      color: #0d6efd;
-      padding: 4px 8px;
-      border-radius: 4px;
-      font-size: 0.75rem;
-      margin-top: 5px;
-      border: 1px dashed #0d6efd;
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      margin-top: 40px;
-      font-size: 0.9rem;
-      color: #6c757d;
-    }
-    .footer-links a {
-      color: #0d6efd;
+      color: white;
+      background-color: #007BFF;
+      border: none;
+      border-radius: 30px;
       text-decoration: none;
-      margin: 0 5px;
-    }
-    .footer-links a:hover {
-      text-decoration: underline;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+      animation: pulse 2s infinite;
     }
 
-    @media (max-width: 768px) {
-      .produk-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .produk-card {
-        padding: 10px;
-        height: 220px;
-      }
-      .produk-img {
-        height: 80px;
-        object-fit: cover;
-      }
-      h3 {
-        font-size: 0.9rem;
-      }
-      .harga {
-        font-size: 1rem;
-      }
+    .download-btn:hover {
+      background-color: #0056b3;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    /* Prevent scroll on mobile */
+    html {
+      touch-action: manipulation;
     }
   </style>
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <div class="header-logo">
-      <img src="https://i.ibb.co.com/Pv7XSkxV/photo-2025-05-28-10-24-09-removebg-preview.png" alt="Logo Toko" />
-    </div>
-    <div class="header-title">WANXX GAMES</div>
-  </header>
 
-  <!-- Search Bar -->
-  <div class="search-bar">
-    <input type="text" placeholder="Cari akun..." id="searchInput" onkeyup="cariProduk()" aria-label="Cari produk" />
+  <div class="container">
+    <!-- Logo Placeholder -->
+    <img src="https://i.ibb.co.com/zY0YJnd/photo-2025-05-30-01-05-00.jpg"  alt="wanxx games logo" class="logo">
+
+    <h1>WANXX GAMES</h1>
+    <p>Instal aplikasi Top Up Game & PPOB Harga Reseller Termurah Cocok Buat Jualan Proses Cepat Cek Sendiri</p>
+
+    <!-- Ganti href dengan file APK atau EXE kamu -->
+    <a href="https://freewebsitetoapp.cloudserverbox.com/app-data/free-apps/16214767477/SE6nwe/app-debug.apk" download class="download-btn">Download</a>
   </div>
 
-  <!-- Filter Buttons -->
-  <div class="filter-buttons" role="group" aria-label="Filter kategori">
-    <button onclick="filterKategori(this, 'all')" class="active">Semua</button>
-    <button onclick="filterKategori(this, 'ff')">Free Fire</button>
-    <button onclick="filterKategori(this, 'topup')">Top Up</button>
-  </div>
-
-  <!-- Produk Grid -->
-  <main>
-    <div class="produk-grid" id="produkGrid"></div>
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 wanxx games. All rights reserved.</p>
-    <p class="footer-links">
-      <a href="/privacy-policy">Privacy Policy</a> |
-      <a href="/faq">FAQ</a>
-    </p>
-  </footer>
-
-  <!-- JavaScript -->
-  <script>
-    // Produk Hardcoded dengan field `link`
-    const defaultProduk = [
-      {
-        nama: "EVOGUN AK LVL 3 SG TROMPET VAULT 39 WEAPON 52 GAGAH",
-        harga: "80000",
-        gambar: "https://i.ibb.co.com/846pzvdS/photo-2025-05-28-10-33-23.jpg",
-        kategori: "ff",
-        link: "https://wanxxpayment.github.io/wanxxgames-detail-akun-1.html"
-      },
-      {
-        nama: "EVOGUN AK LVL 4 VAULT 69 EMOT 7 WEAPON 78",
-        harga: "50000",
-        gambar: "https://i.ibb.co.com/7xXbfxm4/photo-2025-05-28-10-38-34.jpg",
-        kategori: "ff",
-        link: "https://shopee.com/contoh-akun-mlbb-1 "
-      },
-      {
-        nama: "GAGAH SG MAMBAH VAULT 114 EMOT 27 ANIMASI 1 KATANA LOBY 2 WEAPON 136",
-        harga: "75000",
-        gambar: "https://i.ibb.co.com/d4xpVJbF/photo-2025-05-24-15-12-39.jpg",
-        kategori: "ff",
-        link: "https://example.com/valorant-skin "
-      },
-      {
-        nama: "GAGAH TOPI JERAMI VAULT 65 EMOT 12 KATANA LOBY FIST 1 WEAPON 91",
-        harga: "65000",
-        gambar: "https://i.ibb.co.com/wZGQRq2D/photo-2025-05-24-15-10-29.jpg",
-        kategori: "ff",
-        link: "https://example.com/pubg-topup "
-      },
-      {
-        nama: "KOSONG TOP UP",
-        harga: "100000",
-        gambar: "https://i.imgur.com/gjvQYtL.png ",
-        kategori: "topup",
-        link: "https://shopee.com/mlbb-hero "
-      }
-    ];
-
-    document.addEventListener("DOMContentLoaded", () => {
-      muatProduk();
-    });
-
-    function muatProduk() {
-      const grid = document.getElementById("produkGrid");
-      grid.innerHTML = "";
-      defaultProduk.forEach(p => {
-        const card = document.createElement("div");
-        card.className = "produk-card";
-        card.setAttribute("data-kategori", p.kategori);
-        card.innerHTML = `
-          <a href="${p.link}" target="_blank" style="display: block; text-decoration: none; color: inherit;">
-            <img src="${p.gambar}" alt="${p.nama}" class="produk-img" />
-            <h3>${p.nama}</h3>
-            <p class="harga">Rp${parseInt(p.harga).toLocaleString()}</p>
-            <div class="anti-hackback">WANXX GAMES</div>
-          </a>
-        `;
-        grid.appendChild(card);
-      });
-    }
-
-    function cariProduk() {
-      const input = document.getElementById("searchInput").value.toLowerCase();
-      const cards = document.querySelectorAll(".produk-card");
-      let found = false;
-      cards.forEach(card => {
-        const title = card.querySelector("h3").innerText.toLowerCase();
-        card.style.display = title.includes(input) ? "block" : "none";
-        if (title.includes(input)) found = true;
-      });
-      if (!found && input !== "") {
-        alert("Produk tidak ditemukan.");
-      }
-    }
-
-    function filterKategori(btn, kategori) {
-      const buttons = document.querySelectorAll(".filter-buttons button");
-      buttons.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-      const cards = document.querySelectorAll(".produk-card");
-      cards.forEach(card => {
-        const display = (kategori === "all" || card.getAttribute("data-kategori") === kategori) ? "block" : "none";
-        card.style.display = display;
-      });
-    }
-
-    // Efek klik pada produk card
-    document.addEventListener("click", function(e) {
-      if (e.target.closest(".produk-card")) {
-        const card = e.target.closest(".produk-card");
-        card.classList.add("pressed");
-        setTimeout(() => {
-          card.classList.remove("pressed");
-        }, 2000);
-      }
-    });
-  </script>
 </body>
 </html>
