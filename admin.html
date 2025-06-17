@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Panel | WANXX GAMES</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0b1120;
+      color: #fff;
+    }
+    .sidebar {
+      position: fixed;
+      top: 0; left: 0; bottom: 0;
+      width: 220px;
+      background: #0d6efd;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .sidebar h2 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    .sidebar a {
+      color: #fff;
+      text-decoration: none;
+      background: rgba(255,255,255,0.1);
+      padding: 10px 15px;
+      border-radius: 8px;
+      display: block;
+      transition: background 0.3s;
+    }
+    .sidebar a:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    .content {
+      margin-left: 240px;
+      padding: 20px;
+    }
+    .card {
+      background: #121826;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      margin-bottom: 20px;
+    }
+    .card h3 {
+      margin-bottom: 10px;
+      color: #0d6efd;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #0d6efd;
+      margin-bottom: 15px;
+      background: #1e293b;
+      color: #fff;
+      font-size: 0.95rem;
+    }
+    button {
+      background-color: #0d6efd;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background-color: #0b5ed7;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    table th, table td {
+      padding: 10px;
+      border-bottom: 1px solid #334155;
+      text-align: left;
+    }
+    table th {
+      background: #0d6efd;
+    }
+    @media(max-width: 768px) {
+      .sidebar {
+        position: relative;
+        width: 100%;
+        flex-direction: row;
+        overflow-x: auto;
+      }
+      .content {
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>Admin WANXX</h2>
+    <a href="#">Dashboard</a>
+    <a href="#">Kelola Produk</a>
+    <a href="#">Kategori</a>
+    <a href="#">Pengaturan</a>
+    <a href="#">Keluar</a>
+  </div>
+
+  <div class="content">
+    <div class="card">
+      <h3>Tambah Produk Baru</h3>
+      <input type="text" placeholder="Nama Produk" id="namaProduk">
+      <input type="number" placeholder="Harga Produk" id="hargaProduk">
+      <input type="text" placeholder="URL Gambar" id="gambarProduk">
+      <select id="kategoriProduk">
+        <option value="ff">Free Fire</option>
+        <option value="mlbb">MLBB</option>
+        <option value="valorant">Valorant</option>
+        <option value="topup">Top Up</option>
+      </select>
+      <button onclick="tambahProduk()">Tambah Produk</button>
+    </div>
+
+    <div class="card">
+      <h3>Daftar Produk</h3>
+      <table id="tabelProduk">
+        <thead>
+          <tr>
+            <th>Nama</th>
+            <th>Harga</th>
+            <th>Kategori</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    const produk = [];
+
+    function tambahProduk() {
+      const nama = document.getElementById('namaProduk').value;
+      const harga = document.getElementById('hargaProduk').value;
+      const gambar = document.getElementById('gambarProduk').value;
+      const kategori = document.getElementById('kategoriProduk').value;
+
+      produk.push({ nama, harga, gambar, kategori });
+      tampilkanProduk();
+      document.getElementById('namaProduk').value = '';
+      document.getElementById('hargaProduk').value = '';
+      document.getElementById('gambarProduk').value = '';
+    }
+
+    function tampilkanProduk() {
+      const tbody = document.querySelector('#tabelProduk tbody');
+      tbody.innerHTML = '';
+      produk.forEach((p, i) => {
+        tbody.innerHTML += `
+          <tr>
+            <td>${p.nama}</td>
+            <td>Rp ${Number(p.harga).toLocaleString()}</td>
+            <td>${p.kategori.toUpperCase()}</td>
+            <td><button onclick="hapusProduk(${i})">Hapus</button></td>
+          </tr>
+        `;
+      });
+    }
+
+    function hapusProduk(index) {
+      produk.splice(index, 1);
+      tampilkanProduk();
+    }
+  </script>
+
+</body>
+</html>
